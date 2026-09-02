@@ -1,0 +1,305 @@
+/** MS fiting cenovnik 11.04.2023. — VPC bez PDV, cene orijentacione. */
+
+export type PriceCategory =
+  | "clamps"
+  | "unions"
+  | "brass"
+  | "radiator"
+  | "seals"
+  | "finish"
+  | "heating";
+
+export type PriceFamily =
+  | "alca-plovak"
+  | "cep"
+  | "cep-lavabo"
+  | "dihtung-guma"
+  | "dihtung-kling"
+  | "excentar"
+  | "guma-sifon"
+  | "gumeni-umetak"
+  | "hanger"
+  | "holender-crevo"
+  | "holender-klima"
+  | "holender-ms"
+  | "holender-pumpa"
+  | "kapa"
+  | "koleno"
+  | "koleno-sn"
+  | "koleno-usice"
+  | "muf"
+  | "muf-reducir"
+  | "nipla"
+  | "obujmica"
+  | "poluholender"
+  | "produzivac"
+  | "radijator"
+  | "reducir-su"
+  | "reducir-us"
+  | "rozetna-krom"
+  | "rozetna-pvc"
+  | "selna"
+  | "t-komad"
+  | "teflon"
+  | "termostat"
+  | "vodokotlic";
+
+export type PriceItem = {
+  sku: string;
+  name: string;
+  family: PriceFamily;
+  category: PriceCategory;
+  image: string;
+  price: number;
+};
+
+export const PRICE_LIST_DATE = "11.04.2023";
+export const PRICE_LIST_PDF = "/catalogs/cenovnik-ms-fiting-2023.pdf";
+
+export const priceList: PriceItem[] = [
+  { sku: "5101", name: "Gumeni umetak za obujmice 3/8\"", family: "gumeni-umetak", category: "clamps", image: "/images/ms/clamp.jpg", price: 14.0 },
+  { sku: "5102", name: "Gumeni umetak za obujmice 1/2\"", family: "gumeni-umetak", category: "clamps", image: "/images/ms/clamp.jpg", price: 14.5 },
+  { sku: "5103", name: "Gumeni umetak za obujmice 3/4\"", family: "gumeni-umetak", category: "clamps", image: "/images/ms/clamp.jpg", price: 35.0 },
+  { sku: "5104", name: "Gumeni umetak za obujmice 1\"", family: "gumeni-umetak", category: "clamps", image: "/images/ms/clamp.jpg", price: 50.0 },
+  { sku: "5105", name: "Obujmica sa tiplom 3/8\"", family: "obujmica", category: "clamps", image: "/images/ms/clamp.jpg", price: 50.0 },
+  { sku: "5106", name: "Obujmica sa tiplom 1/2\"", family: "obujmica", category: "clamps", image: "/images/ms/clamp.jpg", price: 82.0 },
+  { sku: "5107", name: "Obujmica sa tiplom 3/4\"", family: "obujmica", category: "clamps", image: "/images/ms/clamp.jpg", price: 82.0 },
+  { sku: "3381", name: "Obujmica sa tiplom 1\"", family: "obujmica", category: "clamps", image: "/images/ms/clamp.jpg", price: 74.0 },
+  { sku: "3382", name: "Obujmica sa tiplom 5/4\"", family: "obujmica", category: "clamps", image: "/images/ms/clamp.jpg", price: 65.0 },
+  { sku: "3383", name: "Obujmica sa tiplom 6/4\"", family: "obujmica", category: "clamps", image: "/images/ms/clamp.jpg", price: 72.0 },
+  { sku: "3384", name: "Obujmica sa tiplom 2\"", family: "obujmica", category: "clamps", image: "/images/ms/clamp.jpg", price: 92.0 },
+  { sku: "5110", name: "Poluholender bakarni 1/2\"x15 koleno ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-elbow.jpg", price: 145.0 },
+  { sku: "5109", name: "Poluholender bakarni 1/2\"x15 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 85.0 },
+  { sku: "5146", name: "Poluholender bakarni 3/4\"x15 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 149.0 },
+  { sku: "5108", name: "Poluholender bakarni 1/2\"x18 koleno ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-elbow.jpg", price: 167.0 },
+  { sku: "5137", name: "Poluholender bakarni 1/2\"x18 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 110.0 },
+  { sku: "5111", name: "Poluholender bakarni 3/4\"x18 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 138.0 },
+  { sku: "5145", name: "Poluholender bakarni 3/4\"x22 koleno ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-elbow.jpg", price: 203.0 },
+  { sku: "5112", name: "Poluholender bakarni 3/4\"x22 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 156.0 },
+  { sku: "5143", name: "Poluholender bakarni 3/4\"x28 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 286.0 },
+  { sku: "5144", name: "Poluholender bakarni 1\"x22 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 234.0 },
+  { sku: "5280", name: "Poluholender bakarni 1\"x28 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 268.0 },
+  { sku: "5147", name: "Poluholender bakarni 5/4\"x28 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 481.0 },
+  { sku: "5296", name: "Poluholender bakarni 5/4\"x35 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 530.0 },
+  { sku: "5227", name: "Poluholender bakarni 6/4\"x28 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 952.0 },
+  { sku: "5228", name: "Poluholender bakarni 6/4\"x35 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 856.0 },
+  { sku: "5258", name: "Poluholender bakarni 6/4\"x42 ravni ARCO SPAIN", family: "poluholender", category: "unions", image: "/images/ms/copper-straight.jpg", price: 630.0 },
+  { sku: "5281", name: "Holender MS UN 1/2\" SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 450.0 },
+  { sku: "5282", name: "Holender MS UN 3/4\" SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 620.0 },
+  { sku: "5184", name: "Holender MS SN 3/4\" SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 485.0 },
+  { sku: "5283", name: "Holender MS UN 1\"    SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 860.0 },
+  { sku: "5297", name: "Holender MS UN 5/4\" SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 1500.0 },
+  { sku: "5252", name: "Holender MS SN 5/4\" SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 1065.0 },
+  { sku: "5230", name: "Holender MS UN 6/4\" SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 2500.0 },
+  { sku: "5269", name: "Holender MS SN 6/4\" SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 2180.0 },
+  { sku: "5240", name: "Holender MS UN 2\" SPAIN", family: "holender-ms", category: "unions", image: "/images/ms/union.png", price: 3240.0 },
+  { sku: "5550", name: "Holender za klimu fi 6", family: "holender-klima", category: "unions", image: "/images/ms/union.png", price: 122.0 },
+  { sku: "5551", name: "Holender za klimu fi 10", family: "holender-klima", category: "unions", image: "/images/ms/union.png", price: 186.0 },
+  { sku: "5555", name: "Holender za klimu fi 12", family: "holender-klima", category: "unions", image: "/images/ms/union.png", price: 286.0 },
+  { sku: "5561", name: "MS holender sa kugl. ventilom za cirk.pumpe 1\" - 1\"", family: "holender-pumpa", category: "unions", image: "/images/ms/union.png", price: 914.0 },
+  { sku: "5559", name: "MS holender sa kugl. ventilom za cirk.pumpe 28 - 1\"", family: "holender-pumpa", category: "unions", image: "/images/ms/union.png", price: 820.0 },
+  { sku: "5562", name: "Holender creva za vodu 1/2\"-1/2\" MS", family: "holender-crevo", category: "unions", image: "/images/ms/union.png", price: 166.0 },
+  { sku: "5563", name: "Holender creva za vodu 3/4\"-1/2\"  MS", family: "holender-crevo", category: "unions", image: "/images/ms/union.png", price: 220.0 },
+  { sku: "5564", name: "Holender creva za vodu 3/4\"-3/4\"  MS", family: "holender-crevo", category: "unions", image: "/images/ms/union.png", price: 235.0 },
+  { sku: "5565", name: "Holender creva za vodu 1 \"- 3/4\" MS", family: "holender-crevo", category: "unions", image: "/images/ms/union.png", price: 286.0 },
+  { sku: "5566", name: "Holender creva za vodu 1\"-1\"  MS", family: "holender-crevo", category: "unions", image: "/images/ms/union.png", price: 310.0 },
+  { sku: "5596", name: "Radijat. spojnica za LIVENE radijatore 5/4\" KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 70.0 },
+  { sku: "5568", name: "Reducir za LIVENE radijatore 5/4”-3/4\" desni  KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 150.0 },
+  { sku: "5567", name: "Reducir za LIVENE radijatore 5/4”-3/4\" levi KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 150.0 },
+  { sku: "5591", name: "Čep za LIVENE radijatore 5/4” desni KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 150.0 },
+  { sku: "5590", name: "Čep za LIVENE radijatore 5/4” levi KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 150.0 },
+  { sku: "5593", name: "Reducir za LIVENE radijatore 5/4”-3/8\" desni  KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 150.0 },
+  { sku: "5592", name: "Reducir za LIVENE radijatore 5/4”-3/8\" levi KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 150.0 },
+  { sku: "5594", name: "Reducir za LIVENE radijatore 5/4”-1/2\" desni  KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 155.0 },
+  { sku: "5595", name: "Reducir za LIVENE radijatore 5/4”-1/2\" levi KROM", family: "radijator", category: "radiator", image: "/images/ms/plug.jpg", price: 155.0 },
+  { sku: "5186", name: "Produživač MS 3/8\" x 10 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 79.0 },
+  { sku: "5187", name: "Produživač MS 3/8\" x 15 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 90.0 },
+  { sku: "5188", name: "Produživač MS 3/8\" x 20 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 99.0 },
+  { sku: "5222", name: "Produživač MS 3/8\" x 30 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 114.0 },
+  { sku: "5113", name: "Produživač MS 1/2\" x 10 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 90.0 },
+  { sku: "5114", name: "Produživač MS 1/2\" x 15 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 100.0 },
+  { sku: "5115", name: "Produživač MS 1/2\" x 20 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 118.0 },
+  { sku: "5116", name: "Produživač MS 1/2\" x 25 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 130.0 },
+  { sku: "5117", name: "Produživač MS 1/2\" x 30 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 145.0 },
+  { sku: "5118", name: "Produživač MS 1/2\" x 40 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 189.0 },
+  { sku: "5259", name: "Produživač MS 1/2\" x 50 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 198.0 },
+  { sku: "5189", name: "Produživač MS 3/4\" x 10 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 102.0 },
+  { sku: "5190", name: "Produživač MS 3/4\" x 15 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 130.0 },
+  { sku: "5191", name: "Produživač MS 3/4\" x 20 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 144.0 },
+  { sku: "5288", name: "Produživač MS 3/4\" x 25 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 160.0 },
+  { sku: "5289", name: "Produživač MS 3/4\" x 30 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 172.0 },
+  { sku: "5291", name: "Produživač MS 3/4\" x 40 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 260.0 },
+  { sku: "5233", name: "Produživač MS 3/4\" x 50 mm", family: "produzivac", category: "brass", image: "/images/ms/extension.jpg", price: 278.0 },
+  { sku: "5249", name: "Reducir MS US 3/8\"-1/4\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 97.0 },
+  { sku: "5255", name: "Reducir MS US 1/2\"-1/4\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 118.0 },
+  { sku: "5157", name: "Reducir MS US 1/2\"-3/8\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 99.0 },
+  { sku: "5158", name: "Reducir MS US 3/4\"-1/2\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 109.0 },
+  { sku: "5232", name: "Reducir MS US 1\"-1/2\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 195.0 },
+  { sku: "5253", name: "Reducir MS US 1\"-3/4\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 178.0 },
+  { sku: "5254", name: "Reducir MS US 5/4\"-1\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 370.0 },
+  { sku: "5250", name: "Reducir MS US 6/4\"-5/4\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 445.0 },
+  { sku: "5229", name: "Reducir MS US 2\"-6/4\"", family: "reducir-us", category: "brass", image: "/images/ms/reducer.jpg", price: 1064.0 },
+  { sku: "5124", name: "Reducir MS SU 1/4\"-1/8\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 68.0 },
+  { sku: "5159", name: "Reducir MS SU 3/8\"-1/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 54.0 },
+  { sku: "5160", name: "Reducir MS SU 1/2\"-1/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 76.0 },
+  { sku: "5179", name: "Reducir MS SU 1/2\"-3/8\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 89.0 },
+  { sku: "5196", name: "Reducir MS SU 3/4\"-1/2\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 94.0 },
+  { sku: "5248", name: "Reducir MS SU 3/4\"-3/8\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 132.0 },
+  { sku: "5266", name: "Reducir MS SU 1\" - 1/2\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 182.0 },
+  { sku: "5267", name: "Reducir MS SU 1\" - 3/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 149.0 },
+  { sku: "5292", name: "Reducir MS SU 5/4\" – 1/2\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 375.0 },
+  { sku: "5286", name: "Reducir MS SU 5/4\" – 3/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 320.0 },
+  { sku: "5285", name: "Reducir MS SU 5/4\" – 1\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 236.0 },
+  { sku: "5136", name: "Reducir MS SU 6/4\" – 1/2\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 435.0 },
+  { sku: "5142", name: "Reducir MS SU 6/4\" – 3/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 452.0 },
+  { sku: "5290", name: "Reducir MS SU 6/4\" – 1\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 469.0 },
+  { sku: "5294", name: "Reducir MS SU 6/4\" – 5/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 345.0 },
+  { sku: "5129", name: "Reducir MS SU 2\" - 3/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 718.0 },
+  { sku: "5128", name: "Reducir MS SU 2\" - 1\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 660.0 },
+  { sku: "5262", name: "Reducir MS SU 2\" - 5/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 764.0 },
+  { sku: "5287", name: "Reducir MS SU 2\" – 6/4\"", family: "reducir-su", category: "brass", image: "/images/ms/adapter.jpg", price: 630.0 },
+  { sku: "5173", name: "Čep za lavabo KROMIRAN", family: "cep-lavabo", category: "brass", image: "/images/ms/plug.jpg", price: 412.0 },
+  { sku: "5547", name: "Muf reducir 3/4\" - 1/2\"", family: "muf-reducir", category: "brass", image: "/images/ms/coupling.jpg", price: 155.0 },
+  { sku: "5260", name: "Muf MS 1/4\"", family: "muf", category: "brass", image: "/images/ms/coupling.jpg", price: 78.0 },
+  { sku: "5161", name: "Muf MS 3/8\"", family: "muf", category: "brass", image: "/images/ms/coupling.jpg", price: 83.0 },
+  { sku: "5162", name: "Muf MS 1/2\"", family: "muf", category: "brass", image: "/images/ms/coupling.jpg", price: 122.0 },
+  { sku: "5542", name: "Muf MS 3/4\"", family: "muf", category: "brass", image: "/images/ms/coupling.jpg", price: 166.0 },
+  { sku: "5543", name: "Muf MS 1\"", family: "muf", category: "brass", image: "/images/ms/coupling.jpg", price: 244.0 },
+  { sku: "5544", name: "Muf MS 5/4\"", family: "muf", category: "brass", image: "/images/ms/coupling.jpg", price: 512.0 },
+  { sku: "5545", name: "Muf MS 6/4\"", family: "muf", category: "brass", image: "/images/ms/coupling.jpg", price: 640.0 },
+  { sku: "5546", name: "Muf MS 2\"", family: "muf", category: "brass", image: "/images/ms/coupling.jpg", price: 932.0 },
+  { sku: "5273", name: "Čep MS 1/4\"", family: "cep", category: "brass", image: "/images/ms/plug.jpg", price: 68.0 },
+  { sku: "5163", name: "Čep MS 3/8\"", family: "cep", category: "brass", image: "/images/ms/plug.jpg", price: 56.0 },
+  { sku: "5278", name: "Čep MS 1/2\"", family: "cep", category: "brass", image: "/images/ms/plug.jpg", price: 72.0 },
+  { sku: "5552", name: "Čep MS 3/4\"", family: "cep", category: "brass", image: "/images/ms/plug.jpg", price: 98.0 },
+  { sku: "5553", name: "Čep MS 1\"", family: "cep", category: "brass", image: "/images/ms/plug.jpg", price: 139.0 },
+  { sku: "5554", name: "Čep MS 5/4\"", family: "cep", category: "brass", image: "/images/ms/plug.jpg", price: 260.0 },
+  { sku: "5556", name: "Čep MS 6/4\"", family: "cep", category: "brass", image: "/images/ms/plug.jpg", price: 446.0 },
+  { sku: "5557", name: "Čep MS 2\"", family: "cep", category: "brass", image: "/images/ms/plug.jpg", price: 548.0 },
+  { sku: "5530", name: "Kapa MS 3/8”", family: "kapa", category: "brass", image: "/images/ms/cap.jpg", price: 45.0 },
+  { sku: "5531", name: "Kapa MS 1/2”", family: "kapa", category: "brass", image: "/images/ms/cap.jpg", price: 67.0 },
+  { sku: "5532", name: "Kapa MS 3/4”", family: "kapa", category: "brass", image: "/images/ms/cap.jpg", price: 83.0 },
+  { sku: "5533", name: "Kapa MS 1”", family: "kapa", category: "brass", image: "/images/ms/cap.jpg", price: 144.0 },
+  { sku: "5534", name: "Kapa MS 5/4”", family: "kapa", category: "brass", image: "/images/ms/cap.jpg", price: 250.0 },
+  { sku: "5535", name: "Kapa MS 6/4”", family: "kapa", category: "brass", image: "/images/ms/cap.jpg", price: 410.0 },
+  { sku: "5536", name: "Kapa MS 2”", family: "kapa", category: "brass", image: "/images/ms/cap.jpg", price: 560.0 },
+  { sku: "5501", name: "T komad MS 3/8” EGAL", family: "t-komad", category: "brass", image: "/images/ms/tee.jpg", price: 142.0 },
+  { sku: "5502", name: "T komad MS 1/2” EGAL", family: "t-komad", category: "brass", image: "/images/ms/tee.jpg", price: 215.0 },
+  { sku: "5503", name: "T komad MS 3/4” EGAL", family: "t-komad", category: "brass", image: "/images/ms/tee.jpg", price: 305.0 },
+  { sku: "5504", name: "T komad MS 1” EGAL", family: "t-komad", category: "brass", image: "/images/ms/tee.jpg", price: 565.0 },
+  { sku: "5505", name: "T komad MS 5/4” EGAL", family: "t-komad", category: "brass", image: "/images/ms/tee.jpg", price: 1035.0 },
+  { sku: "5506", name: "T komad MS 6/4” EGAL", family: "t-komad", category: "brass", image: "/images/ms/tee.jpg", price: 1290.0 },
+  { sku: "5507", name: "T komad MS 2” EGAL", family: "t-komad", category: "brass", image: "/images/ms/tee.jpg", price: 2040.0 },
+  { sku: "5510", name: "Koleno MS 3/8”", family: "koleno", category: "brass", image: "/images/ms/elbow.jpg", price: 115.0 },
+  { sku: "5511", name: "Koleno MS 1/2”", family: "koleno", category: "brass", image: "/images/ms/elbow.jpg", price: 185.0 },
+  { sku: "5512", name: "Koleno MS 3/4”", family: "koleno", category: "brass", image: "/images/ms/elbow.jpg", price: 236.0 },
+  { sku: "5513", name: "Koleno MS 1”", family: "koleno", category: "brass", image: "/images/ms/elbow.jpg", price: 465.0 },
+  { sku: "5514", name: "Koleno MS 5/4”", family: "koleno", category: "brass", image: "/images/ms/elbow.jpg", price: 890.0 },
+  { sku: "5515", name: "Koleno MS 6/4”", family: "koleno", category: "brass", image: "/images/ms/elbow.jpg", price: 1150.0 },
+  { sku: "5509", name: "Koleno MS 2”", family: "koleno", category: "brass", image: "/images/ms/elbow.jpg", price: 2240.0 },
+  { sku: "5520", name: "Koleno 3/8” MS SN", family: "koleno-sn", category: "brass", image: "/images/ms/elbow-sn.jpg", price: 120.0 },
+  { sku: "5521", name: "Koleno 1/2” MS SN", family: "koleno-sn", category: "brass", image: "/images/ms/elbow-sn.jpg", price: 142.0 },
+  { sku: "5522", name: "Koleno 3/4” MS SN", family: "koleno-sn", category: "brass", image: "/images/ms/elbow-sn.jpg", price: 249.0 },
+  { sku: "5523", name: "Koleno 1” MS SN", family: "koleno-sn", category: "brass", image: "/images/ms/elbow-sn.jpg", price: 426.0 },
+  { sku: "5524", name: "Koleno 5/4” MS SN", family: "koleno-sn", category: "brass", image: "/images/ms/elbow-sn.jpg", price: 890.0 },
+  { sku: "5525", name: "Koleno 6/4” MS SN", family: "koleno-sn", category: "brass", image: "/images/ms/elbow-sn.jpg", price: 1110.0 },
+  { sku: "5133", name: "Koleno 2” MS SN", family: "koleno-sn", category: "brass", image: "/images/ms/elbow-sn.jpg", price: 1880.0 },
+  { sku: "5560", name: "MS koleno sa ušicama 1/2\"-15", family: "koleno-usice", category: "brass", image: "/images/ms/elbow.jpg", price: 172.0 },
+  { sku: "5123", name: "Nipla MS SS 1/8\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 76.0 },
+  { sku: "5119", name: "Nipla MS SS 1/4\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 68.0 },
+  { sku: "5279", name: "Nipla MS SS 3/8\"-1/4\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 82.0 },
+  { sku: "5122", name: "Nipla MS SS 3/8\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 62.0 },
+  { sku: "5261", name: "Nipla MS SS 1/2\"-1/4\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 102.0 },
+  { sku: "5121", name: "Nipla MS SS 1/2\"-3/8\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 72.0 },
+  { sku: "5120", name: "Nipla MS SS 1/2\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 78.0 },
+  { sku: "5195", name: "Nipla MS SS 3/4\"-1/2\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 115.0 },
+  { sku: "5263", name: "Nipla MS SS 3/4\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 116.0 },
+  { sku: "5274", name: "Nipla MS SS 1\" - 1/2\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 158.0 },
+  { sku: "5264", name: "Nipla MS SS 1\" - 3/4\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 188.0 },
+  { sku: "5265", name: "Nipla MS SS 1\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 204.0 },
+  { sku: "5293", name: "Nipla MS SS 5/4\" – 1”", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 360.0 },
+  { sku: "5295", name: "Nipla MS SS 5/4\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 330.0 },
+  { sku: "5298", name: "Nipla MS SS 5/4\" - 6/4”", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 464.0 },
+  { sku: "5268", name: "Nipla MS SS 6/4\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 458.0 },
+  { sku: "5276", name: "Nipla MS SS 2\"", family: "nipla", category: "brass", image: "/images/ms/nipple.jpg", price: 745.0 },
+  { sku: "5149", name: "Dihtung  9x15x2mm   , 3/8\" kling.bez azbesta", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 8.4 },
+  { sku: "5150", name: "Dihtung  12x18x2mm , 1/2\" kling.bez azbesta", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 11.4 },
+  { sku: "5151", name: "Dihtung 16x24x2mm  , 3/4\" kling.bez azbesta", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 13.0 },
+  { sku: "5152", name: "Dihtung 22x30x2mm  , 1\"    kling.bez azbesta", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 16.0 },
+  { sku: "5256", name: "Dihtung                     , 5/4\" kling bez azbesta", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 24.0 },
+  { sku: "5239", name: "Dihtung                     , 6/4\" kling bez azbesta", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 30.0 },
+  { sku: "1425", name: "Dihtung 5/4\" za holender i radijator", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 42.0 },
+  { sku: "1426", name: "Dihtung 6/4\" za holender", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 48.0 },
+  { sku: "5275", name: "Dihtung guma 9x15x2 za bakar 3/8\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 6.5 },
+  { sku: "5153", name: "Dihtung guma 12x18x3 za bakar 1/2\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 7.8 },
+  { sku: "5154", name: "Dihtung guma 16x24x3 za bakar 3/4\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 7.6 },
+  { sku: "5155", name: "Dihtung guma 22x30x3 za bakar  1\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 8.2 },
+  { sku: "5237", name: "Dihtung guma za pocinkovani holender 1/2\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 8.3 },
+  { sku: "5238", name: "Dihtung guma za pocinkovani holender 3/4", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 10.2 },
+  { sku: "5234", name: "Dihtung guma za pocinkovani holender 1\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 11.8 },
+  { sku: "5235", name: "Dihtung guma za pocinkovani holender 5/4\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 12.9 },
+  { sku: "5236", name: "Dihtung guma za pocinkovani holender 6/4\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 16.4 },
+  { sku: "5224", name: "Dihtung guma za pocinkovani holender 2\"", family: "dihtung-guma", category: "seals", image: "/images/ms/teflon.jpg", price: 24.8 },
+  { sku: "5231", name: "Dihtung klingerit za pocinkovani holender 6/4\"", family: "dihtung-kling", category: "seals", image: "/images/ms/teflon.jpg", price: 48.0 },
+  { sku: "5132", name: "Guma za priključak WC šolje, 60 / 32", family: "guma-sifon", category: "seals", image: "/images/ms/teflon.jpg", price: 93.0 },
+  { sku: "5131", name: "Guma za sifone 50 / 40", family: "guma-sifon", category: "seals", image: "/images/ms/teflon.jpg", price: 106.0 },
+  { sku: "5135", name: "Guma za sifone 50 / 32", family: "guma-sifon", category: "seals", image: "/images/ms/teflon.jpg", price: 115.0 },
+  { sku: "5130", name: "Guma za WC šolju - stari tip", family: "guma-sifon", category: "seals", image: "/images/ms/teflon.jpg", price: 264.0 },
+  { sku: "5171", name: "Guma za pisoar", family: "guma-sifon", category: "seals", image: "/images/ms/teflon.jpg", price: 106.0 },
+  { sku: "5164", name: "Teflon traka za gas FIMI Italy", family: "teflon", category: "seals", image: "/images/ms/teflon.jpg", price: 58.0 },
+  { sku: "5165", name: "Teflon traka za vodu ARCO", family: "teflon", category: "seals", image: "/images/ms/teflon.jpg", price: 52.0 },
+  { sku: "5431", name: "Rozetna otvarajuća PVC bela 15", family: "rozetna-pvc", category: "finish", image: "/images/ms/cap.jpg", price: 19.0 },
+  { sku: "5432", name: "Rozetna otvarajuća PVC bela 16", family: "rozetna-pvc", category: "finish", image: "/images/ms/cap.jpg", price: 19.0 },
+  { sku: "5420", name: "Rozetna otvarajuća PVC bela 18", family: "rozetna-pvc", category: "finish", image: "/images/ms/cap.jpg", price: 19.0 },
+  { sku: "5427", name: "Rozetna otvarajuća PVC bela 20", family: "rozetna-pvc", category: "finish", image: "/images/ms/cap.jpg", price: 19.0 },
+  { sku: "5469", name: "Rozetna otvarajuća PVC bela 22", family: "rozetna-pvc", category: "finish", image: "/images/ms/cap.jpg", price: 19.0 },
+  { sku: "5421", name: "Rozetna otvarajuća PVC bela 25", family: "rozetna-pvc", category: "finish", image: "/images/ms/cap.jpg", price: 19.0 },
+  { sku: "5470", name: "Rozetna otvarajuća PVC bela 28", family: "rozetna-pvc", category: "finish", image: "/images/ms/cap.jpg", price: 19.0 },
+  { sku: "5430", name: "Rozetna otvarajuća krom 15", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 98.0 },
+  { sku: "5433", name: "Rozetna otvarajuća krom 16", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 98.0 },
+  { sku: "5434", name: "Rozetna otvarajuća krom 18", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 98.0 },
+  { sku: "5429", name: "Rozetna otvarajuća krom 20", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 98.0 },
+  { sku: "5446", name: "Rozetna otvarajuća krom 22", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 98.0 },
+  { sku: "5437", name: "Rozetna otvarajuća krom 25", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 98.0 },
+  { sku: "5438", name: "Rozetna otvarajuća krom 28", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 98.0 },
+  { sku: "5174", name: "Rozetna 3/8\" krom rastavljujuća", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 125.0 },
+  { sku: "5182", name: "Rozetna 1/2\" krom rastavljujuća", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 129.0 },
+  { sku: "5199", name: "Rozetna 3/4\" krom rastavljujuća", family: "rozetna-krom", category: "finish", image: "/images/ms/cap.jpg", price: 166.0 },
+  { sku: "5818", name: "Metalna šelna sa gumom 12-16 1/4\"        M8", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 46.0 },
+  { sku: "5801", name: "Metalna šelna sa gumom 17-19 3/8\"        M8", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 40.0 },
+  { sku: "5802", name: "Metalna šelna sa gumom 20-23 1/2\"        M8", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 45.0 },
+  { sku: "5803", name: "Metalna šelna sa gumom 25-34 3/4\"        M8", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 49.0 },
+  { sku: "5804", name: "Metalna šelna sa gumom 31-38 1\"           M8", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 53.0 },
+  { sku: "5805", name: "Metalna šelna sa gumom 40-46 5/4\"        M8", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 56.0 },
+  { sku: "5806", name: "Metalna šelna sa gumom 48-53 6/4\"        M8", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 62.0 },
+  { sku: "5807", name: "Metalna šelna sa gumom 60-64 2\"           M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 84.0 },
+  { sku: "5808", name: "Metalna šelna sa gumom 72-78  2 1/2\"    M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 120.0 },
+  { sku: "5809", name: "Metalna šelna sa gumom 87-92 3\"           M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 132.0 },
+  { sku: "5810", name: "Metalna šelna sa gumom 102-116 4\"       M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 170.0 },
+  { sku: "5811", name: "Metalna šelna sa gumom 121-127           M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 229.0 },
+  { sku: "5812", name: "Metalna šelna sa gumom 133-141 5\"       M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 240.0 },
+  { sku: "5813", name: "Metalna šelna sa gumom 159-168 6\"       M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 278.0 },
+  { sku: "5814", name: "Metalna šelna sa gumom 193-203           M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 330.0 },
+  { sku: "5815", name: "Metalna šelna sa gumom 210-219           M8/10", family: "selna", category: "clamps", image: "/images/ms/clip.png", price: 314.0 },
+  { sku: "5616", name: "ALCA plovak za monoblok odozdo 3/8\"", family: "alca-plovak", category: "heating", image: "/images/ms/float.jpg", price: 1070.0 },
+  { sku: "5618", name: "ALCA plovak za monoblok odozdo 1/2\"", family: "alca-plovak", category: "heating", image: "/images/ms/float.jpg", price: 1070.0 },
+  { sku: "5602", name: "Vodokotlić Luka ABS univerzalni", family: "vodokotlic", category: "heating", image: "/images/ms/float.jpg", price: 2690.0 },
+  { sku: "5621", name: "Zvono za vodokotlić Luka", family: "vodokotlic", category: "heating", image: "/images/ms/float.jpg", price: 1170.0 },
+  { sku: "5445", name: "Hanger vijak M8x70", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 7.5 },
+  { sku: "5489", name: "Hanger vijak M8x80", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 10.6 },
+  { sku: "54100", name: "Hanger vijak M8x90", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 10.4 },
+  { sku: "5493", name: "Hanger vijak M8x100", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 13.3 },
+  { sku: "5483", name: "Hanger vijak M8x120", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 16.4 },
+  { sku: "5484", name: "Hanger vijak M8x140", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 19.7 },
+  { sku: "5492", name: "Hanger vijak M8x150", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 19.5 },
+  { sku: "5485", name: "Hanger vijak M8x160", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 26.0 },
+  { sku: "5498", name: "Hanger vijak M10x100", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 17.0 },
+  { sku: "5486", name: "Hanger vijak M10x120", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 19.5 },
+  { sku: "5487", name: "Hanger vijak M10x140", family: "hanger", category: "heating", image: "/images/ms/clip.png", price: 26.6 },
+  { sku: "5615", name: "Excentar baterije deblji /duži  1/2\"x3/4\"", family: "excentar", category: "heating", image: "/images/ms/eccentric.jpg", price: 280.0 },
+  { sku: "5180", name: "Termostat Q3", family: "termostat", category: "heating", image: "/images/ms/float.jpg", price: 2100.0 },
+  { sku: "5178", name: "Termostat Q3RF", family: "termostat", category: "heating", image: "/images/ms/float.jpg", price: 4900.0 },
+  { sku: "5223", name: "Termostat Q7", family: "termostat", category: "heating", image: "/images/ms/float.jpg", price: 2750.0 },
+  { sku: "5277", name: "Termostat Q7RF", family: "termostat", category: "heating", image: "/images/ms/float.jpg", price: 5300.0 },
+  { sku: "5183", name: "Termostat T32RF", family: "termostat", category: "heating", image: "/images/ms/float.jpg", price: 3800.0 },
+];
