@@ -9,7 +9,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Catalogs from "./pages/Catalogs";
 import CatalogViewer from "./pages/CatalogViewer";
-import PriceList from "./pages/PriceList";
+import Products from "./pages/Products";
+import Product from "./pages/Product";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -19,9 +20,11 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/o-nama" component={About} />
+      <Route path="/proizvodi/:id" component={Product} />
+      <Route path="/proizvodi" component={Products} />
       <Route path="/katalozi" component={Catalogs} />
       <Route path="/katalozi/:id" component={CatalogViewer} />
-      <Route path="/cenovnik" component={PriceList} />
+      <Route path="/cenovnik" component={Products} />
       <Route path="/kontakt" component={Contact} />
       <Route path="/privatnost" component={Privacy} />
       <Route path="/uslovi" component={Terms} />

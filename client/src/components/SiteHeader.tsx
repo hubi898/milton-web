@@ -15,10 +15,8 @@ export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" 
 
   const nav = [
     { label: t.nav.home, href: "/" },
+    { label: t.nav.products, href: "/proizvodi" },
     { label: t.nav.about, href: "/o-nama" },
-    { label: t.nav.catalogs, href: "/katalozi" },
-    { label: t.nav.priceList, href: "/cenovnik" },
-    { label: t.nav.contact, href: "/kontakt" },
   ] as const;
 
   useEffect(() => {
@@ -30,13 +28,22 @@ export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" 
 
   useEffect(() => setOpen(false), [location]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const contactActive = location === "/kontakt" || location.startsWith("/kontakt");
+
   return (
-    <header className={`mh ${dark ? "mh--dark" : "mh--light"} ${scrolled ? "mh--solid" : ""}`}>
+    <header className={`mh ${dark ? "mh--dark" : "mh--light"} ${scrolled || open ? "mh--solid" : ""}`}>
       <div className="mh__inner">
         <Link href="/" className="mh__brand" aria-label={t.nav.homeAria}>
           <img
             src={
-              dark && !scrolled
+              dark && !scrolled && !open
                 ? publicUrl("/images/milton-logo.png")
                 : publicUrl("/images/milton-logo-dark.png")
             }
@@ -54,10 +61,13 @@ export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" 
               </Link>
             );
           })}
+          <Link href="/kontakt" className={`mh__cta mh__cta--menu ${contactActive ? "is-active" : ""}`}>
+            {t.nav.contact}
+          </Link>
         </nav>
 
-        <Link href="/katalozi" className="mh__cta">
-          {t.nav.catalogs}
+        <Link href="/kontakt" className={`mh__cta ${contactActive ? "is-active" : ""}`}>
+          {t.nav.contact}
         </Link>
 
         <button

@@ -56,20 +56,14 @@ export default function Catalogs() {
                 </p>
                 <h2>{copy.title}</h2>
                 <p>{copy.description}</p>
-                <strong>
-                  {c.id === "cenovnik-ms-2023"
-                    ? `${t.nav.priceList} →`
-                    : ready
-                      ? t.catalogsPage.openReader
-                      : t.catalogsPage.addLater}
-                </strong>
+                <strong>{ready ? t.catalogsPage.openReader : t.catalogsPage.addLater}</strong>
               </div>
             </>
           );
           return ready ? (
             <Link
               key={c.id}
-              href={c.id === "cenovnik-ms-2023" ? "/cenovnik" : `/katalozi/${c.id}`}
+              href={c.id === "cenovnik-ms-2023" ? "/proizvodi#ponuda" : `/katalozi/${c.id}`}
               className="catalog-rows__item"
             >
               {body}

@@ -1,8 +1,7 @@
 import { Link } from "wouter";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { ArrowRight, ArrowUpRight, FileText } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
-import { catalogs } from "@/data/catalogs";
 import { assortment } from "@/data/assortment";
 import { houseCallouts, rooms, type HouseRoom } from "@/data/houseCallouts";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -67,9 +66,6 @@ function sampleCam(p: number): Cam {
     ty: lerp(a.ty, b.ty, t),
   };
 }
-
-const styron = catalogs.find((c) => c.id === "styron")!;
-const sideDocs = catalogs.filter((c) => c.id !== "styron");
 
 export default function Home() {
   const { t } = useLanguage();
@@ -180,6 +176,27 @@ export default function Home() {
 
   return (
     <SiteShell headerTone="light">
+      <section className="intro" aria-label={t.nav.home}>
+        <div className="intro__copy">
+          <img className="intro__mark" src={publicUrl("/images/milton-mark.png")} alt="MILTON" />
+          <h1>
+            {t.hero.h1} <span>{t.hero.h1span}</span>
+          </h1>
+          <p>{t.hero.lead}</p>
+          <Link href="/proizvodi" className="btn btn--orange">
+            {t.hero.cta} <ArrowRight size={18} />
+          </Link>
+        </div>
+        <div className="intro__stage">
+          {assortment.slice(0, 3).map((item) => (
+            <Link key={item.id} href="/proizvodi" className="intro__tile">
+              <img src={publicUrl(item.image)} alt={t.assortment[item.id].title} />
+              <span>{t.assortment[item.id].title}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="hz" ref={heroRef} aria-label={t.hero.aria}>
         <div className="hz__pin">
           <i className="hz__progress" aria-hidden />
@@ -213,10 +230,13 @@ export default function Home() {
                       </span>
                       <span className="hz__label">
                         <span className="hz__line" aria-hidden />
-                        <span className="hz__tag">
-                          <em>{c.sku}</em>
-                          {t.hero.pins[c.sku]}
-                        </span>
+                        <Link href="/proizvodi" className="hz__tag">
+                          <img src={publicUrl(c.image)} alt="" />
+                          <span>
+                            <em>{t.hero.rooms[c.room]}</em>
+                            {t.hero.pins[c.sku]}
+                          </span>
+                        </Link>
                       </span>
                     </li>
                   ))}
@@ -237,82 +257,11 @@ export default function Home() {
             )}
           </div>
 
-          <div className="hz__copy">
-            <div className="hz__brand">
-              <img className="hz__mark" src={publicUrl("/images/milton-mark.png")} alt="MILTON" />
-            </div>
-            <h1>
-              {t.hero.h1} <span>{t.hero.h1span}</span>
-            </h1>
-            <p className="hz__lead">{t.hero.lead}</p>
-            <a href="#home-katalozi" className="btn btn--orange hz__cta">
-              {t.hero.cta} <ArrowRight size={20} />
-            </a>
-          </div>
-
           <div className="hz__hint">
             <span>{t.hero.hint}</span>
             <i />
           </div>
-        </div>
-      </section>
 
-      <section id="home-katalozi" className="section section--docs">
-        <div className="section__head">
-          <div>
-            <p className="eyebrow eyebrow--orange">{t.home.catalogsEyebrow}</p>
-            <h2>{t.home.catalogsH2}</h2>
-            <p className="section__lead">{t.home.catalogsLead}</p>
-          </div>
-          <Link href="/katalozi" className="btn btn--blue">
-            {t.home.allCatalogs}
-          </Link>
-        </div>
-
-        <div className="docs">
-          <Link href="/katalozi/styron" className="docs__feature">
-            <div className="docs__collage">
-              {assortment.slice(0, 4).map((item) => (
-                <img key={item.id} src={publicUrl(item.image)} alt="" />
-              ))}
-            </div>
-            <div className="docs__body">
-              <span className="tag tag--ok">
-                <FileText size={12} />
-                PDF · {styron.year}
-              </span>
-              <h3>{t.catalogs.items.styron.title}</h3>
-              <p>{t.catalogs.items.styron.description}</p>
-              <ul className="docs__chips">
-                {assortment.map((item) => (
-                  <li key={item.id}>{t.assortment[item.id].title}</li>
-                ))}
-              </ul>
-              <strong>
-                {t.home.browseCatalog} <ArrowRight size={16} />
-              </strong>
-            </div>
-          </Link>
-
-          <div className="docs__side">
-            {sideDocs.map((c) => (
-              <Link
-                key={c.id}
-                href={c.id === "cenovnik-ms-2023" ? "/cenovnik" : `/katalozi/${c.id}`}
-                className="docs__mini"
-              >
-                <img src={publicUrl(c.coverImage)} alt="" />
-                <div>
-                  <span className="tag">
-                    <FileText size={12} />
-                    {t.catalogs.categories[c.category]}
-                  </span>
-                  <h3>{t.catalogs.items[c.id].title}</h3>
-                  <p>{t.catalogs.items[c.id].subtitle}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 

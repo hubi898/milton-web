@@ -9,16 +9,17 @@ export type HouseCallout = {
   y: number;
   side?: "left" | "right";
   room: HouseRoom;
+  image: string;
 };
 
 export const houseCallouts: HouseCallout[] = [
-  { sku: "STY-M-70", x: 30, y: 39, side: "left", room: "bath" },
-  { sku: "STY-740", x: 25, y: 45, side: "left", room: "bath" },
-  { sku: "STY-654", x: 46, y: 47, side: "right", room: "bath" },
-  { sku: "STY-536-A-K", x: 46, y: 71, side: "right", room: "util" },
-  { sku: "STY-530-E-H", x: 33, y: 77, side: "left", room: "util" },
-  { sku: "STY-090", x: 40, y: 83, side: "right", room: "util" },
-  { sku: "STY-643", x: 69, y: 61, side: "left", room: "garage" },
+  { sku: "STY-M-70", x: 30, y: 39, side: "left", room: "bath", image: "/images/styron/shower-black.jpg" },
+  { sku: "STY-740", x: 25, y: 45, side: "left", room: "bath", image: "/images/styron/cisterns.jpg" },
+  { sku: "STY-654", x: 46, y: 47, side: "right", room: "bath", image: "/images/styron/sink-siphon.jpg" },
+  { sku: "STY-536-A-K", x: 46, y: 71, side: "right", room: "util", image: "/images/styron/floor-drain.jpg" },
+  { sku: "STY-530-E-H", x: 33, y: 77, side: "left", room: "util", image: "/images/styron/jollyflex.jpg" },
+  { sku: "STY-090", x: 40, y: 83, side: "right", room: "util", image: "/images/styron/sink-siphon.jpg" },
+  { sku: "STY-643", x: 69, y: 61, side: "left", room: "garage", image: "/images/styron/outdoor-channels.jpg" },
 ];
 
 export const rooms: { id: HouseRoom; index: string }[] = [

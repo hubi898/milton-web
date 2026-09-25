@@ -1,14 +1,7 @@
 import { FormEvent, useState } from "react";
 import SiteShell from "@/components/SiteShell";
 import { useLanguage } from "@/i18n/LanguageContext";
-
-const phones = [
-  { key: "central" as const, value: "024 / 487 8354", href: "tel:+381244878354" },
-  { key: "fax" as const, value: "024 / 487 8088", href: "tel:+381244878088" },
-  { key: "bozso" as const, value: "063 / 596 774", href: "tel:+38163596774" },
-  { key: "bicskei" as const, value: "063 / 596 774", href: "tel:+38163596774" },
-  { key: "makra" as const, value: "062 / 191 4265", href: "tel:+381621914265" },
-];
+import { CONTACT_EMAIL, contactPhones } from "@/data/contacts";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -21,7 +14,7 @@ export default function Contact() {
     const email = String(data.get("email") || "");
     const message = String(data.get("message") || "");
     const body = encodeURIComponent(`${t.contact.mailName}: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:milton.koko@gmail.com?subject=${encodeURIComponent(t.contact.mailSubject)}&body=${body}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.contact.mailSubject)}&body=${body}`;
     setSent(true);
   };
 
@@ -59,17 +52,20 @@ export default function Contact() {
           <div className="info-card">
             <h3>{t.contact.phones}</h3>
             <ul>
-              {phones.map((p) => (
-                <li key={p.key}>
+              {contactPhones.map((p) => (
+                <li key={p.key} className={p.withEmail ? "info-card__person" : undefined}>
                   <span>{t.contact.phoneLabels[p.key]}</span>
-                  <a href={p.href}>{p.value}</a>
+                  <div className="info-card__links">
+                    <a href={p.href}>{p.value}</a>
+                    {p.withEmail ? <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> : null}
+                  </div>
                 </li>
               ))}
             </ul>
           </div>
           <div className="info-card">
             <h3>Email</h3>
-            <a href="mailto:milton.koko@gmail.com">milton.koko@gmail.com</a>
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </div>
           <div className="info-card">
             <h3>{t.contact.address}</h3>

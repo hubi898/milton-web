@@ -14,6 +14,7 @@ const sr = {
   },
   nav: {
     home: "Početna",
+    products: "Proizvodi",
     about: "O nama",
     catalogs: "Katalozi",
     priceList: "Cenovnik",
@@ -26,6 +27,8 @@ const sr = {
   footer: {
     blurb: "Metalna roba · instalacije · grejanje · Styron zastupništvo od 2007.",
     navigation: "Navigacija",
+    catalogs: "Katalozi",
+    legal: "Pravno",
     contact: "Kontakt",
     privacy: "Privatnost",
     terms: "Uslovi",
@@ -37,7 +40,7 @@ const sr = {
     h1: "Spojevi koji",
     h1span: "drže zgradu.",
     lead: "Odvodni sistemi i mesingani fiting — za ekipe koje ugrađuju svaki dan.",
-    cta: "Pogledajte kataloge",
+    cta: "Pogledajte proizvode",
     hint: "Skrolujte kroz kuću",
     rooms: {
       bath: "Kupatilo",
@@ -61,11 +64,14 @@ const sr = {
     allCatalogs: "Svi katalozi",
     browseCatalog: "Listajte katalog",
     aboutEyebrow: "O nama",
-    aboutH2: "Dve decenije sa Styron-om.",
-    aboutP:
-      "Od 2007. u Kanjiži — veleprodaja armature, grejanja i odvodnih sistema. Styron Kft. je naš najduži partner.",
+    aboutH2: "Od 2007. u Kanjiži.",
+    aboutP: "Veleprodaja armature, grejanja i odvodnih sistema za izvođače u Srbiji i regionu.",
     aboutLink: "Cela priča",
     aboutImgAlt: "Styron odvodni sistemi",
+    featuredEyebrow: "Asortiman",
+    featuredH2: "Delovi koje ekipe traže.",
+    featuredLead: "Otvorite proizvod i pogledajte sve veličine.",
+    featuredAll: "Svi proizvodi",
     ctaEyebrow: "Kontakt",
     ctaH2a: "Treba vam deo?",
     ctaH2b: "Javite se.",
@@ -179,7 +185,7 @@ const sr = {
     visionEyebrow: "Vizija",
     visionH2: "Sledeće poglavlje, od 2026.",
     visionP:
-      "Naredno poglavlje vodi nova generacija, gradeći na poverenju, kvalitetu i prekograničnoj saradnji. Upravljanje ostaje u porodici. Nova direktorka donosi iskustvo iz regulatorne usklađenosti, zaštite podataka i rada u velikim međunarodnim organizacijama.",
+      "Naredno poglavlje vodi nova generacija. Upravljanje ostaje u porodici — na poverenju i saradnji koja je firmu i izgradila.",
     visionItems: [
       "Proširenje asortimana izvan sadašnjeg kataloga",
       "Modernizacija tehničke infrastrukture i procesa",
@@ -187,7 +193,7 @@ const sr = {
     ],
     teamEyebrow: "Ljudi",
     teamH2: "Naš tim",
-    teamLead: "Lica iza veleprodaje — koga zovete, i čime se bavi.",
+    teamLead: "",
     ctaCatalogs: "Pogledajte kataloge",
   },
   team: {
@@ -197,7 +203,7 @@ const sr = {
       focus: "Vođenje firme i dugoročna partnerstva. Izgradio Milton od nule u Kanjiži.",
     },
     bicskei: {
-      name: "Bicskei Károly",
+      name: "Károly Bicskei",
       role: "Veleprodaja",
       focus: "Asortiman, nabavka i rad sa distributerima i izvođačima.",
     },
@@ -231,7 +237,7 @@ const sr = {
       central: "Centrala",
       fax: "Fax",
       bozso: "Karolj Božo",
-      bicskei: "Bicskei Károly",
+      bicskei: "Károly Bicskei",
       makra: "Akoš Makra",
     },
   },
@@ -251,20 +257,94 @@ const sr = {
   legal: {
     eyebrow: "Pravno",
     privacyTitle: "Politika privatnosti",
-    privacyP1:
-      "MILTON d.o.o. poštuje privatnost posetilaca sajta. Podaci koje nam dobrovoljno pošaljete putem kontakt forme ili emaila (ime, email, sadržaj poruke) koriste se isključivo radi odgovora na vaš upit.",
-    privacyP2:
-      "Ne prodajemo i ne ustupamo vaše podatke trećim licima u marketinske svrhe. Podaci se čuvaju onoliko dugo koliko je potrebno za komunikaciju u vezi sa upitom.",
-    privacyP3: "Za pitanja o privatnosti:",
     termsTitle: "Uslovi korišćenja",
-    termsP1:
-      "Sadržaj ovog sajta (tekstovi, slike, katalozi) namenjen je informisanju o ponudi kompanije MILTON d.o.o. Cene u katalozima i cenovnicima su orijentacione dok se ne potvrde u ponudi.",
-    termsP2a:
-      "Zabranjeno je neovlašćeno kopiranje i komercijalna upotreba materijala sa sajta bez saglasnosti kompanije. Za sva pitanja obratite se:",
+    download: "Preuzmi dokument",
+    terms: [
+      {
+        heading: "1. O kompaniji",
+        body: "MILTON d.o.o., Kanjiža, Srbija. Uvoz-izvoz veleprodaja: odvodne instalacije, mesing fitinzi, grejanje i vodoinstalaterski materijali. Kontakt: info@milton.rs",
+      },
+      {
+        heading: "2. Sadržaj veb sajta",
+        body: "Sadržaj veb sajta (tekstovi, slike, katalozi) služi za predstavljanje ponude MILTON d.o.o. Cene u katalozima i cenovnicima su informativne dok se ne potvrde ponudom.",
+      },
+      {
+        heading: "3. Intelektualna svojina",
+        body: "Kopiranje i komercijalna upotreba materijala sa sajta bez dozvole kompanije je zabranjeno.",
+      },
+      {
+        heading: "4. Porudžbine i isporuka",
+        body: "Porudžbine se primaju putem e-maila ili telefona. Uslovi i rokovi isporuke dogovaraju se individualno. Konačna cena potvrđuje se ponudom.",
+      },
+      {
+        heading: "5. Uslovi plaćanja",
+        body: "Prihvaćeni načini i rokovi plaćanja navedeni su u individualnoj ponudi. U slučaju kašnjenja u plaćanju, MILTON d.o.o. zadržava pravo naplate zateznih kamata.",
+      },
+      {
+        heading: "6. Ograničenje odgovornosti",
+        body: "MILTON d.o.o. ne odgovara za eventualne greške u podacima ili cenama na sajtu. Konačni uslovi su uvek oni navedeni u pismenoj ponudi.",
+      },
+      {
+        heading: "7. Merodavno pravo",
+        body: "Na ove uslove primenjuje se pravo Republike Srbije. Za sporove je nadležan sud u Kanjiži.",
+      },
+    ],
+    privacy: [
+      {
+        heading: "1. Rukovalac podacima",
+        body: "MILTON d.o.o., Kanjiža, Srbija. Kontakt: info@milton.rs",
+      },
+      {
+        heading: "2. Podaci koji se prikupljaju",
+        body: "Podaci dobrovoljno poslati putem kontakt forme ili e-maila: ime, e-mail adresa, sadržaj poruke.",
+      },
+      {
+        heading: "3. Svrha i pravni osnov obrade",
+        body: "Podaci se koriste isključivo za odgovor na Vaš upit. Pravni osnov: pristanak lica na koje se podaci odnose (ZZPL čl. 12 / GDPR čl. 6 st. 1 tač. a).",
+      },
+      {
+        heading: "4. Rok čuvanja podataka",
+        body: "Podaci se čuvaju samo onoliko dugo koliko je potrebno za komunikaciju o upitu, najduže 1 godinu.",
+      },
+      {
+        heading: "5. Deljenje podataka",
+        body: "Vaše podatke ne prodajemo niti delimo sa trećim stranama u marketinške svrhe.",
+      },
+      {
+        heading: "6. Prava lica na koje se podaci odnose",
+        body: "Imate pravo da: pristupite svojim podacima · zatražite ispravku ili brisanje · povučete pristanak · uložite prigovor · podnesete pritužbu Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.",
+      },
+      {
+        heading: "7. Kolačići (cookies)",
+        body: "Naš veb sajt može koristiti kolačiće radi poboljšanja korisničkog iskustva. Za analitičke ili marketinške kolačiće tražimo Vaš prethodni pristanak.",
+      },
+      {
+        heading: "8. Kontakt za pitanja o privatnosti",
+        body: "info@milton.rs",
+      },
+    ],
   },
   notFound: {
     title: "Stranica nije pronađena",
     back: "Nazad na početnu",
+  },
+  products: {
+    eyebrow: "Asortiman",
+    h1: "Proizvodi",
+    h1span: "na jednom mestu.",
+    lead: "Otvori proizvod i pogledaj sve veličine, šifru i cenu.",
+    back: "Svi proizvodi",
+    allSizes: "Sve veličine",
+    sku: "Šifra",
+    enquire: "Pošalji upit",
+    related: "Slični proizvodi",
+    missing: "Proizvod nije pronađen",
+    styronTitle: "Styron",
+    styronP:
+      "Milton je veleprodajni zastupnik Styron proizvoda u Srbiji: podni slivnici, tuš i spoljne kanalice, sifoni, WC sistemi i Jolly Flex. Katalog 2025/26 ostaje dostupan za listanje.",
+    qualityH2: "Kvalitet koji drži ponudu",
+    size: "Veličina",
+    from: "od",
   },
   pricePage: {
     eyebrow: "Cenovnik",
@@ -307,6 +387,7 @@ const hu: Dict = {
   },
   nav: {
     home: "Kezdőlap",
+    products: "Termékek",
     about: "Rólunk",
     catalogs: "Katalógusok",
     priceList: "Árlista",
@@ -319,9 +400,11 @@ const hu: Dict = {
   footer: {
     blurb: "Fémáru · szerelés · fűtés · Styron képviselet 2007 óta.",
     navigation: "Navigáció",
+    catalogs: "Katalógusok",
+    legal: "Jogi",
     contact: "Kapcsolat",
     privacy: "Adatvédelem",
-    terms: "Feltételek",
+    terms: "Felhasználási feltételek",
     rights: "Minden jog fenntartva",
     address: "Pozorišna 7, 24420 Magyarkanizsa",
   },
@@ -330,7 +413,7 @@ const hu: Dict = {
     h1: "Kötések, amelyek",
     h1span: "tartják az épületet.",
     lead: "Lefolyórendszerek és sárgaréz fitting — csapatoknak, akik naponta szerelnek.",
-    cta: "Katalógusok",
+    cta: "Termékek megtekintése",
     hint: "Görgessen végig a házon",
     rooms: {
       bath: "Fürdőszoba",
@@ -354,11 +437,14 @@ const hu: Dict = {
     allCatalogs: "Összes katalógus",
     browseCatalog: "Katalógus lapozása",
     aboutEyebrow: "Rólunk",
-    aboutH2: "Két évtized a Styronnal.",
-    aboutP:
-      "2007 óta Magyarkanizsán — szerelvények, fűtés és lefolyórendszerek nagykereskedelme. A Styron Kft. a legrégebbi partnerünk.",
+    aboutH2: "2007 óta Magyarkanizsán.",
+    aboutP: "Szerelvények, fűtés és lefolyórendszerek nagykereskedelme kivitelezőknek Szerbiában és a régióban.",
     aboutLink: "A teljes történet",
     aboutImgAlt: "Styron lefolyórendszerek",
+    featuredEyebrow: "Választék",
+    featuredH2: "Alkatrészek, amelyeket a szerelők keresnek.",
+    featuredLead: "Válasszon terméket, és nézze meg az összes méretet.",
+    featuredAll: "Összes termék",
     ctaEyebrow: "Kapcsolat",
     ctaH2a: "Alkatrész kell?",
     ctaH2b: "Keressen minket.",
@@ -471,15 +557,15 @@ const hu: Dict = {
     visionEyebrow: "Jövőkép",
     visionH2: "A következő fejezet, 2026-tól.",
     visionP:
-      "A következő fejezetet az új generáció viszi, a bizalomra, a minőségre és a határokon átnyúló együttműködésre építve. Az irányítás a családban marad. Az új igazgató a szabályozási megfelelés, az adatvédelem és a nagy nemzetközi szervezetekben szerzett tapasztalatot hozza.",
+      "A következő fejezetet az új generáció viszi. Az irányítás a családban marad — arra a bizalomra építve, amely a céget felépítette.",
     visionItems: [
       "A választék bővítése a jelenlegi katalóguson túl",
       "A műszaki infrastruktúra és a folyamatok korszerűsítése",
       "Meglévő és új partnerségek erősítése — a régióban és azon túl",
     ],
-    teamEyebrow: "Emberek",
+    teamEyebrow: "Csapatunk",
     teamH2: "Csapatunk",
-    teamLead: "A nagykereskedelem arca — kit hív, és mivel foglalkozik.",
+    teamLead: "",
     ctaCatalogs: "Katalógusok",
   },
   team: {
@@ -489,7 +575,7 @@ const hu: Dict = {
       focus: "A cég vezetése és a hosszú távú partnerségek. A Miltont Magyarkanizsán a nulláról építette fel.",
     },
     bicskei: {
-      name: "Bicskei Károly",
+      name: "Károly Bicskei",
       role: "Kereskedelem",
       focus: "Kínálat, beszerzés, forgalmazók és kivitelezők.",
     },
@@ -523,7 +609,7 @@ const hu: Dict = {
       central: "Központ",
       fax: "Fax",
       bozso: "Bózsó Károly",
-      bicskei: "Bicskei Károly",
+      bicskei: "Károly Bicskei",
       makra: "Makra Ákos",
     },
   },
@@ -543,20 +629,94 @@ const hu: Dict = {
   legal: {
     eyebrow: "Jogi",
     privacyTitle: "Adatvédelmi tájékoztató",
-    privacyP1:
-      "A MILTON d.o.o. tiszteletben tartja a webhely látogatóinak magánéletét. A kapcsolatfelvételi űrlapon vagy e-mailben önként megadott adatok (név, e-mail, üzenet) kizárólag a megkeresés megválaszolására szolgálnak.",
-    privacyP2:
-      "Adatait nem adjuk el, és nem adjuk át harmadik félnek marketing célból. Az adatokat csak addig őrizzük, amíg a megkereséssel kapcsolatos kommunikációhoz szükséges.",
-    privacyP3: "Adatvédelmi kérdésekben:",
     termsTitle: "Felhasználási feltételek",
-    termsP1:
-      "A webhely tartalma (szövegek, képek, katalógusok) a MILTON d.o.o. kínálatának ismertetésére szolgál. A katalógusokban és árlistákon szereplő árak tájékoztató jellegűek, amíg ajánlatban meg nem erősítjük őket.",
-    termsP2a:
-      "A webhely anyagának engedély nélküli másolása és kereskedelmi felhasználása tilos a cég hozzájárulása nélkül. Kérdéseivel forduljon hozzánk:",
+    download: "Dokumentum letöltése",
+    terms: [
+      {
+        heading: "1. A vállalkozásról",
+        body: "MILTON d.o.o., Kanjiža, Szerbia. Export-import nagykereskedelem: lefolyórendszerek, réz csatlakozók, fűtési és vízvezetéki anyagok. Kapcsolat: info@milton.rs",
+      },
+      {
+        heading: "2. A webhely tartalma",
+        body: "A webhely tartalma (szövegek, képek, katalógusok) a MILTON d.o.o. kínálatának ismertetésére szolgál. A katalógusokban és árlistákon szereplő árak tájékoztató jellegűek, amíg ajánlatban meg nem erősítjük őket.",
+      },
+      {
+        heading: "3. Szellemi tulajdon",
+        body: "A webhely anyagának engedély nélküli másolása és kereskedelmi felhasználása tilos a cég hozzájárulása nélkül.",
+      },
+      {
+        heading: "4. Rendelések és szállítás",
+        body: "A megrendelések e-mailben vagy telefonon adhatók le. A szállítási feltételeket és határidőket minden esetben egyedileg egyeztetjük. A végső ár az ajánlatban kerül megerősítésre.",
+      },
+      {
+        heading: "5. Fizetési feltételek",
+        body: "Az elfogadott fizetési módokat és határidőket az egyedi ajánlat tartalmazza. Késedelmes fizetés esetén a MILTON d.o.o. fenntartja a jogot késedelmi kamat felszámítására.",
+      },
+      {
+        heading: "6. Felelősség korlátozása",
+        body: "A MILTON d.o.o. nem vállal felelősséget a weboldalon található esetleges adathibákért vagy árelírásokért. A végleges feltételek minden esetben az írásos ajánlatban rögzítettek.",
+      },
+      {
+        heading: "7. Alkalmazandó jog",
+        body: "Jelen feltételekre a Szerb Köztársaság jogszabályai az irányadók. Jogvita esetén a kanjizsai illetékes bíróság rendelkezik hatáskörrel.",
+      },
+    ],
+    privacy: [
+      {
+        heading: "1. Adatkezelő",
+        body: "MILTON d.o.o., Kanjiža, Szerbia. Kapcsolat: info@milton.rs",
+      },
+      {
+        heading: "2. Gyűjtött adatok",
+        body: "A kapcsolati űrlapon vagy e-mailben önkéntesen megadott adatok: név, e-mail cím, üzenet tartalma.",
+      },
+      {
+        heading: "3. Adatkezelés célja és jogalapja",
+        body: "Az adatokat kizárólag az Ön megkeresésének megválaszolására használjuk. Jogalap: az érintett hozzájárulása (ZZPL 12. cikk / GDPR 6. cikk (1) bek. a) pont).",
+      },
+      {
+        heading: "4. Adatmegőrzési idő",
+        body: "Az adatokat csak a megkeresés lezárásához szükséges ideig őrizzük meg, maximum 1 évig.",
+      },
+      {
+        heading: "5. Adattovábbítás",
+        body: "Az Ön adatait nem adjuk el, és nem osztjuk meg harmadik felekkel marketing célból.",
+      },
+      {
+        heading: "6. Az érintett jogai",
+        body: "Önnek joga van: hozzáférni adataihoz · kérni azok helyesbítését vagy törlését · visszavonni hozzájárulását · tiltakozni az adatkezelés ellen · panaszt benyújtani a Szerb Adatvédelmi Biztoshoz.",
+      },
+      {
+        heading: "7. Sütik (cookie-k)",
+        body: "Weboldalunk sütiket használhat a felhasználói élmény javítása érdekében. Analitikai vagy marketing süti használata esetén az Ön előzetes hozzájárulását kérjük.",
+      },
+      {
+        heading: "8. Kapcsolat adatvédelmi kérdésekben",
+        body: "info@milton.rs",
+      },
+    ],
   },
   notFound: {
     title: "Az oldal nem található",
     back: "Vissza a kezdőlapra",
+  },
+  products: {
+    eyebrow: "Választék",
+    h1: "Termékek",
+    h1span: "egy helyen.",
+    lead: "Nyisd meg a terméket, és nézd meg az összes méretet, cikkszámot és árat.",
+    back: "Összes termék",
+    allSizes: "Összes méret",
+    sku: "Cikkszám",
+    enquire: "Ajánlatkérés",
+    related: "Hasonló termékek",
+    missing: "A termék nem található",
+    styronTitle: "Styron",
+    styronP:
+      "A Milton a Styron termékek nagykereskedelmi képviselője Szerbiában: padlóösszefolyók, zuhany- és kültéri folyókák, szifonok, WC-rendszerek és Jolly Flex. A 2025/26-os katalógus továbbra is lapozható.",
+    qualityH2: "A kínálatot a minőség tartja",
+    size: "Méret",
+    from: "tól",
   },
   pricePage: {
     eyebrow: "Árlista",
@@ -597,6 +757,7 @@ const en: Dict = {
   },
   nav: {
     home: "Home",
+    products: "Products",
     about: "About",
     catalogs: "Catalogs",
     priceList: "Price list",
@@ -609,6 +770,8 @@ const en: Dict = {
   footer: {
     blurb: "Metal goods · installations · heating · Styron representation since 2007.",
     navigation: "Navigation",
+    catalogs: "Catalogs",
+    legal: "Legal",
     contact: "Contact",
     privacy: "Privacy",
     terms: "Terms",
@@ -620,7 +783,7 @@ const en: Dict = {
     h1: "Joints that",
     h1span: "hold the building.",
     lead: "Drainage systems and brass fittings — for crews who install every day.",
-    cta: "See catalogs",
+    cta: "See products",
     hint: "Scroll through the house",
     rooms: {
       bath: "Bathroom",
@@ -644,11 +807,14 @@ const en: Dict = {
     allCatalogs: "All catalogs",
     browseCatalog: "Browse catalog",
     aboutEyebrow: "About",
-    aboutH2: "Two decades with Styron.",
-    aboutP:
-      "Since 2007 in Kanjiža — wholesale fittings, heating and drainage. Styron Kft. is our longest partner.",
+    aboutH2: "In Kanjiža since 2007.",
+    aboutP: "Wholesale fittings, heating and drainage for contractors in Serbia and the region.",
     aboutLink: "The full story",
     aboutImgAlt: "Styron drainage systems",
+    featuredEyebrow: "Range",
+    featuredH2: "Parts crews ask for.",
+    featuredLead: "Open a product and see every size.",
+    featuredAll: "All products",
     ctaEyebrow: "Contact",
     ctaH2a: "Need a part?",
     ctaH2b: "Get in touch.",
@@ -761,15 +927,15 @@ const en: Dict = {
     visionEyebrow: "Vision",
     visionH2: "The next chapter, from 2026.",
     visionP:
-      "The next chapter is led by a new generation, building on trust, quality and cross-border cooperation. Leadership stays in the family. The new director brings experience in regulatory compliance, data protection and work in large international organizations.",
+      "The next chapter is led by a new generation. Leadership stays in the family — on the trust the company was built with.",
     visionItems: [
       "Expanding the range beyond the current catalog",
       "Modernizing technical infrastructure and processes",
       "Strengthening existing and new partnerships — in the region and beyond",
     ],
-    teamEyebrow: "People",
+    teamEyebrow: "Our team",
     teamH2: "Our team",
-    teamLead: "The faces behind wholesale — who you call, and what they do.",
+    teamLead: "",
     ctaCatalogs: "See catalogs",
   },
   team: {
@@ -779,7 +945,7 @@ const en: Dict = {
       focus: "Running the company and long-term partnerships. Built Milton from the ground up in Kanjiža.",
     },
     bicskei: {
-      name: "Bicskei Károly",
+      name: "Károly Bicskei",
       role: "Wholesale",
       focus: "Range, purchasing, and work with distributors and contractors.",
     },
@@ -813,7 +979,7 @@ const en: Dict = {
       central: "Switchboard",
       fax: "Fax",
       bozso: "Károly Bózsó",
-      bicskei: "Bicskei Károly",
+      bicskei: "Károly Bicskei",
       makra: "Ákos Makra",
     },
   },
@@ -833,20 +999,94 @@ const en: Dict = {
   legal: {
     eyebrow: "Legal",
     privacyTitle: "Privacy policy",
-    privacyP1:
-      "MILTON d.o.o. respects the privacy of site visitors. Data you send us voluntarily via the contact form or email (name, email, message) is used only to answer your enquiry.",
-    privacyP2:
-      "We do not sell or share your data with third parties for marketing. Data is kept only as long as needed to communicate about the enquiry.",
-    privacyP3: "For privacy questions:",
     termsTitle: "Terms of use",
-    termsP1:
-      "The content of this site (text, images, catalogs) is intended to inform you about the offer of MILTON d.o.o. Prices in catalogs and price lists are indicative until confirmed in a quote.",
-    termsP2a:
-      "Unauthorized copying and commercial use of site materials without the company’s consent is prohibited. For any questions contact:",
+    download: "Download document",
+    terms: [
+      {
+        heading: "1. About the Company",
+        body: "MILTON d.o.o., Kanjiža, Serbia. Import-export wholesale: drainage systems, brass fittings, heating and plumbing materials. Contact: info@milton.rs",
+      },
+      {
+        heading: "2. Website Content",
+        body: "The website content (texts, images, catalogues) serves to present the MILTON d.o.o. product range. Prices shown in catalogues and price lists are indicative until confirmed in a formal offer.",
+      },
+      {
+        heading: "3. Intellectual Property",
+        body: "Unauthorised copying or commercial use of website materials without the company's consent is prohibited.",
+      },
+      {
+        heading: "4. Orders and Delivery",
+        body: "Orders are accepted by email or telephone. Delivery terms and timelines are agreed individually. The final price is confirmed in the written offer.",
+      },
+      {
+        heading: "5. Payment Terms",
+        body: "Accepted payment methods and deadlines are stated in the individual offer. In case of late payment, MILTON d.o.o. reserves the right to charge statutory interest.",
+      },
+      {
+        heading: "6. Limitation of Liability",
+        body: "MILTON d.o.o. is not liable for any errors in data or prices on the website. Final terms are always those stated in the written offer.",
+      },
+      {
+        heading: "7. Governing Law",
+        body: "These terms are governed by the laws of the Republic of Serbia. The competent court in Kanjiža has jurisdiction over any disputes.",
+      },
+    ],
+    privacy: [
+      {
+        heading: "1. Data Controller",
+        body: "MILTON d.o.o., Kanjiža, Serbia. Contact: info@milton.rs",
+      },
+      {
+        heading: "2. Data Collected",
+        body: "Data voluntarily submitted via the contact form or email: name, email address, message content.",
+      },
+      {
+        heading: "3. Purpose and Legal Basis",
+        body: "Data is used solely to respond to your enquiry. Legal basis: consent of the data subject (Serbian ZZPL Art. 12 / GDPR Art. 6(1)(a)).",
+      },
+      {
+        heading: "4. Data Retention",
+        body: "Data is kept only as long as needed to communicate about the enquiry, and no longer than 1 year.",
+      },
+      {
+        heading: "5. Data Sharing",
+        body: "We do not sell or share your data with third parties for marketing purposes.",
+      },
+      {
+        heading: "6. Your Rights",
+        body: "You have the right to: access your data · request correction or deletion · withdraw consent · object to processing · file a complaint with the Commissioner for Information of Public Importance and Personal Data Protection in Serbia.",
+      },
+      {
+        heading: "7. Cookies",
+        body: "Our website may use cookies to improve user experience. For analytical or marketing cookies, we will request your prior consent.",
+      },
+      {
+        heading: "8. Privacy Contact",
+        body: "info@milton.rs",
+      },
+    ],
   },
   notFound: {
     title: "Page not found",
     back: "Back to home",
+  },
+  products: {
+    eyebrow: "Range",
+    h1: "Products",
+    h1span: "in one place.",
+    lead: "Open a product to see every size, code and price.",
+    back: "All products",
+    allSizes: "All sizes",
+    sku: "Code",
+    enquire: "Request a quote",
+    related: "Similar products",
+    missing: "Product not found",
+    styronTitle: "Styron",
+    styronP:
+      "Milton is the wholesale representative of Styron products in Serbia: floor drains, shower and outdoor channels, traps, WC systems and Jolly Flex. The 2025/26 catalog stays available to browse.",
+    qualityH2: "Quality that holds the range",
+    size: "Size",
+    from: "from",
   },
   pricePage: {
     eyebrow: "Price list",
