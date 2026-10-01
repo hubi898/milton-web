@@ -130,7 +130,7 @@ export default function Product() {
                   <div className="shop-card__body">
                     <h3>{item.title}</h3>
                     <strong>
-                      {t.products.from} {formatPrice(from, lang)} <small>RSD</small>
+                      {formatPrice(from, lang)} <small>RSD</small>
                     </strong>
                   </div>
                 </Link>
