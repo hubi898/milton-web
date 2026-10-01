@@ -54,12 +54,13 @@ export default function Products() {
   return (
     <SiteShell headerTone="light">
       <section className="range-intro range-intro--lead">
+        <h1>{t.products.h1}</h1>
         <p>{t.about.p2}</p>
       </section>
 
       <div className="range-ribbon" aria-hidden="true">
         <div className="range-ribbon__track">
-          {[0, 1].map((copy) => (
+          {[0, 1, 2, 3].map((copy) => (
             <ul key={copy} className="range-ribbon__list">
               {assortment.map((item) => (
                 <li key={`${copy}-${item.id}`}>{t.assortment[item.id].title}</li>

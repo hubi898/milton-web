@@ -24,9 +24,9 @@ export default function Contact() {
         <p className="eyebrow">{t.contact.eyebrow}</p>
         <h1>
           {t.contact.h1}
-          <span> {t.contact.h1span}</span>
+          {t.contact.h1span ? <span> {t.contact.h1span}</span> : null}
         </h1>
-        <p className="page-hero__lead">{t.contact.lead}</p>
+        {t.contact.lead ? <p className="page-hero__lead">{t.contact.lead}</p> : null}
       </section>
 
       <section className="contact-grid">

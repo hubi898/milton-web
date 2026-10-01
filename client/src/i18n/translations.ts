@@ -216,8 +216,8 @@ const sr = {
   contact: {
     eyebrow: "Kontakt",
     h1: "Pišite nam",
-    h1span: "ili svratite u Kanjižu.",
-    lead: "Za sve informacije — telefon, mejl ili lično. Iskreno se radujemo poseti.",
+    h1span: "",
+    lead: "",
     name: "Ime i prezime",
     email: "Email",
     message: "Poruka",
@@ -588,8 +588,8 @@ const hu: Dict = {
   contact: {
     eyebrow: "Kapcsolat",
     h1: "Írjon nekünk",
-    h1span: "vagy látogasson el Magyarkanizsára.",
-    lead: "Minden információhoz — telefon, e-mail vagy személyesen. Őszintén várjuk.",
+    h1span: "",
+    lead: "",
     name: "Név",
     email: "E-mail",
     message: "Üzenet",
@@ -958,8 +958,8 @@ const en: Dict = {
   contact: {
     eyebrow: "Contact",
     h1: "Write to us",
-    h1span: "or visit us in Kanjiža.",
-    lead: "For any information — phone, email or in person. We genuinely look forward to seeing you.",
+    h1span: "",
+    lead: "",
     name: "Full name",
     email: "Email",
     message: "Message",
