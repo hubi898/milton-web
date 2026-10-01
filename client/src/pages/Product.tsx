@@ -25,10 +25,6 @@ export default function Product() {
   );
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [params.id]);
-
-  useEffect(() => {
     if (!family) return;
     const next =
       family.variants.find((v) => v.sku === requested)?.sku ?? family.variants[0]?.sku ?? "";
@@ -64,7 +60,6 @@ export default function Product() {
             <img src={publicUrl(family.image)} alt="" />
           </div>
           <div className="pdp__buy">
-            <p className="eyebrow">{t.pricePage.categories[family.category]}</p>
             <h1>{family.title}</h1>
             <p className="pdp__price">
               {formatPrice(selected.price, lang)} <small>RSD</small>
@@ -133,7 +128,6 @@ export default function Product() {
                     <img src={publicUrl(item.image)} alt="" />
                   </div>
                   <div className="shop-card__body">
-                    <p>{t.pricePage.categories[item.category]}</p>
                     <h3>{item.title}</h3>
                     <strong>
                       {t.products.from} {formatPrice(from, lang)} <small>RSD</small>

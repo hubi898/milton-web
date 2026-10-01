@@ -15,11 +15,10 @@ export default function About() {
           {t.about.h1}
           <span> {t.about.h1span}</span>
         </h1>
-        <p className="page-hero__lead">{t.about.lead}</p>
-      </section>
-
-      <section className="story-plain">
-        <p>{t.about.storyP1}</p>
+        <div className="page-hero__story">
+          <p>{t.about.lead}</p>
+          <p>{t.about.storyP1}</p>
+        </div>
       </section>
 
       <section className="founder-note">

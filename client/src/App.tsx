@@ -3,6 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Router as WouterRouter, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
+import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider } from "./i18n/LanguageContext";
 import Home from "./pages/Home";
@@ -17,20 +18,23 @@ import Terms from "./pages/Terms";
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/o-nama" component={About} />
-      <Route path="/proizvodi/:id" component={Product} />
-      <Route path="/proizvodi" component={Products} />
-      <Route path="/katalozi" component={Catalogs} />
-      <Route path="/katalozi/:id" component={CatalogViewer} />
-      <Route path="/cenovnik" component={Products} />
-      <Route path="/kontakt" component={Contact} />
-      <Route path="/privatnost" component={Privacy} />
-      <Route path="/uslovi" component={Terms} />
-      <Route path="/404" component={NotFound} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/o-nama" component={About} />
+        <Route path="/proizvodi/:id" component={Product} />
+        <Route path="/proizvodi" component={Products} />
+        <Route path="/katalozi" component={Catalogs} />
+        <Route path="/katalozi/:id" component={CatalogViewer} />
+        <Route path="/cenovnik" component={Products} />
+        <Route path="/kontakt" component={Contact} />
+        <Route path="/privatnost" component={Privacy} />
+        <Route path="/uslovi" component={Terms} />
+        <Route path="/404" component={NotFound} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 

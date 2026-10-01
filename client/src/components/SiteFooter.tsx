@@ -28,17 +28,22 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="mf__bar">
-        <span>
+        <span className="mf__copy">
           © {new Date().getFullYear()} MILTON d.o.o. · {t.footer.rights}
         </span>
-        <p className="mf__credit">
-          <img src={publicUrl("/images/hubai-head.png")} alt="" />
-          <span>Created by HubAI.D-vision</span>
-        </p>
         <nav className="mf__legal" aria-label={t.footer.legal}>
           <Link href="/privatnost">{t.footer.privacy}</Link>
           <Link href="/uslovi">{t.footer.terms}</Link>
         </nav>
+        <a
+          className="mf__credit"
+          href="https://cryptohub-6d81f8fe698d.herokuapp.com/hu/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={publicUrl("/images/hubai-head.png")} alt="" />
+          <span>Created by HubAI.D-vision</span>
+        </a>
       </div>
     </footer>
   );
