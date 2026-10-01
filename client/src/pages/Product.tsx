@@ -82,7 +82,10 @@ export default function Product() {
                 </button>
               ))}
             </div>
-            <Link href="/kontakt" className="btn btn--orange">
+            <Link
+              href={`/kontakt?product=${encodeURIComponent(family.id)}&sku=${encodeURIComponent(selected.sku)}`}
+              className="btn btn--orange"
+            >
               {t.products.enquire} <ArrowRight size={16} />
             </Link>
             <p className="pdp__note">{t.pricePage.note}</p>

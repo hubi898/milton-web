@@ -1,11 +1,48 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
+import { Link, useLocation, useSearch } from "wouter";
+import { Plus, X } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { CONTACT_EMAIL, contactPhones } from "@/data/contacts";
+import { getProductFamily, variantSize } from "@/data/productFamilies";
+import {
+  addEnquiryItem,
+  getEnquiryItems,
+  removeEnquiryItem,
+  type EnquiryItem,
+} from "@/lib/enquiry";
 
 export default function Contact() {
   const { t } = useLanguage();
+  const search = useSearch();
+  const [, setLocation] = useLocation();
   const [sent, setSent] = useState(false);
+  const [items, setItems] = useState<EnquiryItem[]>([]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(search);
+    const familyId = params.get("product") ?? "";
+    const sku = params.get("sku") ?? "";
+    if (familyId && sku) {
+      const family = getProductFamily(familyId);
+      const variant = family?.variants.find((v) => v.sku === sku);
+      if (family && variant) {
+        addEnquiryItem({
+          familyId: family.id,
+          sku: variant.sku,
+          title: family.title,
+          size: variantSize(variant.name, family.title),
+          name: variant.name,
+        });
+      }
+      setLocation("/kontakt", { replace: true });
+    }
+    setItems(getEnquiryItems());
+  }, [search, setLocation]);
+
+  const onRemove = (sku: string) => {
+    setItems(removeEnquiryItem(sku));
+  };
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -13,7 +50,15 @@ export default function Contact() {
     const name = String(data.get("name") || "");
     const email = String(data.get("email") || "");
     const message = String(data.get("message") || "");
-    const body = encodeURIComponent(`${t.contact.mailName}: ${name}\nEmail: ${email}\n\n${message}`);
+    const productsBlock =
+      items.length > 0
+        ? `\n\n${t.contact.enquiryProducts}:\n${items
+            .map((item) => `- ${item.title} · ${item.size} · ${t.products.sku} ${item.sku}`)
+            .join("\n")}`
+        : "";
+    const body = encodeURIComponent(
+      `${t.contact.mailName}: ${name}\nEmail: ${email}${productsBlock}\n\n${message}`,
+    );
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.contact.mailSubject)}&body=${body}`;
     setSent(true);
   };
@@ -31,6 +76,38 @@ export default function Contact() {
 
       <section className="contact-grid">
         <form className="form-card" onSubmit={onSubmit}>
+          <div className="enquiry-box">
+            <div className="enquiry-box__head">
+              <h3>{t.contact.enquiryProducts}</h3>
+              <Link href="/proizvodi" className="enquiry-box__add">
+                <Plus size={14} /> {t.contact.enquiryAdd}
+              </Link>
+            </div>
+            {items.length === 0 ? (
+              <p className="enquiry-box__empty">{t.contact.enquiryEmpty}</p>
+            ) : (
+              <ul className="enquiry-box__list">
+                {items.map((item) => (
+                  <li key={item.sku}>
+                    <div>
+                      <strong>{item.title}</strong>
+                      <span>
+                        {item.size} · {t.products.sku} {item.sku}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      aria-label={t.contact.enquiryRemove}
+                      onClick={() => onRemove(item.sku)}
+                    >
+                      <X size={16} />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
           <label>
             {t.contact.name}
             <input name="name" required placeholder={t.contact.placeholderName} />

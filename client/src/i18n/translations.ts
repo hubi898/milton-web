@@ -233,6 +233,10 @@ const sr = {
     city: "24420 Kanjiža",
     mailSubject: "Upit — Milton",
     mailName: "Ime",
+    enquiryProducts: "Proizvodi za upit",
+    enquiryAdd: "Dodaj još",
+    enquiryEmpty: "Još nema proizvoda. Otvorite asortiman i pošaljite upit za željene artikle.",
+    enquiryRemove: "Ukloni proizvod",
     phoneLabels: {
       central: "Centrala",
       fax: "Fax",
@@ -607,6 +611,10 @@ const hu: Dict = {
     city: "24420 Magyarkanizsa",
     mailSubject: "Érdeklődés — Milton",
     mailName: "Név",
+    enquiryProducts: "Érdekelt termékek",
+    enquiryAdd: "További hozzáadása",
+    enquiryEmpty: "Még nincs termék. Nyissa meg a kínálatot, és kérjen ajánlatot a kívánt cikkekre.",
+    enquiryRemove: "Termék eltávolítása",
     phoneLabels: {
       central: "Központ",
       fax: "Fax",
@@ -979,6 +987,10 @@ const en: Dict = {
     city: "24420 Kanjiža",
     mailSubject: "Enquiry — Milton",
     mailName: "Name",
+    enquiryProducts: "Products of interest",
+    enquiryAdd: "Add more",
+    enquiryEmpty: "No products yet. Browse the range and request a quote for the items you need.",
+    enquiryRemove: "Remove product",
     phoneLabels: {
       central: "Switchboard",
       fax: "Fax",
