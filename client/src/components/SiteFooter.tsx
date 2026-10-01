@@ -33,11 +33,6 @@ export default function SiteFooter() {
           <Link href="/katalozi">{t.nav.catalogs}</Link>
         </div>
         <div>
-          <h4>{t.footer.legal}</h4>
-          <Link href="/privatnost">{t.footer.privacy}</Link>
-          <Link href="/uslovi">{t.footer.terms}</Link>
-        </div>
-        <div>
           <h4>{t.footer.contact}</h4>
           <a href="tel:+381244878354">024 / 487 8354</a>
           <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
@@ -45,8 +40,13 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="mf__bar">
-        <span>© {new Date().getFullYear()} MILTON d.o.o.</span>
-        <span>{t.footer.rights}</span>
+        <span>
+          © {new Date().getFullYear()} MILTON d.o.o. · {t.footer.rights}
+        </span>
+        <nav className="mf__legal" aria-label={t.footer.legal}>
+          <Link href="/privatnost">{t.footer.privacy}</Link>
+          <Link href="/uslovi">{t.footer.terms}</Link>
+        </nav>
       </div>
     </footer>
   );

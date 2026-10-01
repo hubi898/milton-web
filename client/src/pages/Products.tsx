@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ArrowRight, Download, Search } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import { assortment } from "@/data/assortment";
@@ -32,6 +32,11 @@ export default function Products() {
   const [cat, setCat] = useState<PriceCategory | "all">("all");
   const families = useMemo(() => productFamilies(), []);
 
+  useEffect(() => {
+    if (window.location.hash) return;
+    window.scrollTo(0, 0);
+  }, []);
+
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
     return families.filter((family) => {
@@ -48,23 +53,21 @@ export default function Products() {
 
   return (
     <SiteShell headerTone="light">
-      <section className="page-hero">
-        <p className="eyebrow">{t.products.eyebrow}</p>
-        <h1>
-          {t.products.h1}
-          <span> {t.products.h1span}</span>
-        </h1>
-        <p className="page-hero__lead">{t.products.lead}</p>
-      </section>
-
-      <section className="range-intro">
-        <ul className="range-intro__lines">
-          {assortment.map((item) => (
-            <li key={item.id}>{t.assortment[item.id].title}</li>
-          ))}
-        </ul>
+      <section className="range-intro range-intro--lead">
         <p>{t.about.p2}</p>
       </section>
+
+      <div className="range-ribbon" aria-hidden="true">
+        <div className="range-ribbon__track">
+          {[0, 1].map((copy) => (
+            <ul key={copy} className="range-ribbon__list">
+              {assortment.map((item) => (
+                <li key={`${copy}-${item.id}`}>{t.assortment[item.id].title}</li>
+              ))}
+            </ul>
+          ))}
+        </div>
+      </div>
 
       <section className="styron-quiet">
         <div>
