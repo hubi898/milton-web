@@ -5,12 +5,6 @@ import { team } from "@/data/team";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { publicUrl } from "@/lib/publicUrl";
 
-const PARTNERS = [
-  { src: "/images/partner-styron.png", name: "Styron" },
-  { src: "/images/partner-alca.png", name: "Alca" },
-  { src: "/images/partner-arco.png", name: "Arco" },
-] as const;
-
 export default function About() {
   const { t } = useLanguage();
 
@@ -29,41 +23,6 @@ export default function About() {
 
       <section className="founder-note">
         <p>{t.about.founderP1}</p>
-      </section>
-
-      <section className="usp-block">
-        <h2>{t.about.whyH2}</h2>
-        <ul>
-          {t.about.strengths.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="partner-panel">
-        <div className="partner-panel__copy">
-          <h2>Styron Kft.</h2>
-          <p>{t.about.partnerP1}</p>
-          <p>{t.about.partnerP2}</p>
-          <p>{t.about.partnerP3}</p>
-          <Link href="/katalozi/styron" className="link-arrow">
-            {t.about.partnerLink} <ArrowRight size={16} />
-          </Link>
-        </div>
-        <div className="partner-panel__media">
-          <img src={publicUrl("/images/styron/shower-channel.jpg")} alt={t.about.showerAlt} />
-          <img src={publicUrl("/images/styron/floor-drain.jpg")} alt={t.about.drainAlt} />
-        </div>
-      </section>
-
-      <section className="logos-section">
-        <h2>{t.about.partnersH2}</h2>
-        <p>{t.about.p1}</p>
-        <div className="logos-row">
-          {PARTNERS.map((partner) => (
-            <img key={partner.name} src={publicUrl(partner.src)} alt={partner.name} />
-          ))}
-        </div>
       </section>
 
       <section className="vision-block">

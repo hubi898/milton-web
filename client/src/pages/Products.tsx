@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useMemo, useState } from "react";
-import { Search } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import { productFamilies } from "@/data/productFamilies";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -77,6 +77,25 @@ export default function Products() {
           </div>
         )}
         <p className="plist__note">{t.pricePage.note}</p>
+      </section>
+
+      <section className="usp-block">
+        <h2>{t.about.whyH2}</h2>
+        <ul>
+          {t.about.strengths.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="partner-panel partner-panel--text">
+        <h2>Styron Kft.</h2>
+        <p>{t.about.partnerP1}</p>
+        <p>{t.about.partnerP2}</p>
+        <p>{t.about.partnerP3}</p>
+        <Link href="/katalozi/styron" className="link-arrow">
+          {t.about.partnerLink} <ArrowRight size={16} />
+        </Link>
       </section>
     </SiteShell>
   );

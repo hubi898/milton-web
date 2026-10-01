@@ -1404,7 +1404,7 @@
 /* ─── Logos ─────────────────────────────────────────────── */
 
 .logos-section {
-  padding: 8px var(--gutter) 56px;
+  padding: 48px var(--gutter) 56px;
   max-width: var(--page);
   margin: 0 auto;
   text-align: center;
@@ -1822,6 +1822,28 @@
   max-width: var(--page);
   margin: 0 auto 56px;
   padding: 0 var(--gutter);
+}
+
+.partner-panel--text {
+  display: block;
+  margin-bottom: 72px;
+}
+
+.partner-panel--text h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 0 0 18px;
+}
+
+.partner-panel--text p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+  max-width: none;
+}
+
+.partner-panel--text .link-arrow {
+  margin-top: 8px;
 }
 
 .partner-panel__copy h2 {

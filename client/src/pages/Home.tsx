@@ -7,6 +7,12 @@ import { houseCallouts, rooms, type HouseRoom } from "@/data/houseCallouts";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { publicUrl } from "@/lib/publicUrl";
 
+const PARTNERS = [
+  { src: "/images/partner-styron.png", name: "Styron" },
+  { src: "/images/partner-alca.png", name: "Alca" },
+  { src: "/images/partner-arco.png", name: "Arco" },
+] as const;
+
 function clamp01(n: number) {
   return Math.min(Math.max(n, 0), 1);
 }
@@ -290,6 +296,16 @@ export default function Home() {
           <Link href="/o-nama" className="link-arrow">
             {t.home.aboutLink} <ArrowUpRight size={16} />
           </Link>
+        </div>
+      </section>
+
+      <section className="logos-section">
+        <h2>{t.about.partnersH2}</h2>
+        <p>{t.about.p1}</p>
+        <div className="logos-row">
+          {PARTNERS.map((partner) => (
+            <img key={partner.name} src={publicUrl(partner.src)} alt={partner.name} />
+          ))}
         </div>
       </section>
 
