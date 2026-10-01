@@ -1,9 +1,10 @@
 import { Link, useParams, useSearch } from "wouter";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import { getProductFamily, productFamilies, variantSize } from "@/data/productFamilies";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { addEnquiryItem } from "@/lib/enquiry";
 import { publicUrl } from "@/lib/publicUrl";
 
 function formatPrice(n: number, lang: string) {
@@ -23,12 +24,14 @@ export default function Product() {
   const [sku, setSku] = useState(
     () => family?.variants.find((v) => v.sku === requested)?.sku ?? family?.variants[0]?.sku ?? "",
   );
+  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     if (!family) return;
     const next =
       family.variants.find((v) => v.sku === requested)?.sku ?? family.variants[0]?.sku ?? "";
     setSku(next);
+    setAdded(false);
   }, [params.id, requested]);
 
   if (!family) {
@@ -48,6 +51,17 @@ export default function Product() {
   const related = productFamilies()
     .filter((item) => item.category === family.category && item.id !== family.id)
     .slice(0, 3);
+
+  const onEnquire = () => {
+    addEnquiryItem({
+      familyId: family.id,
+      sku: selected.sku,
+      title: family.title,
+      size: variantSize(selected.name, family.title),
+      name: selected.name,
+    });
+    setAdded(true);
+  };
 
   return (
     <SiteShell headerTone="light">
@@ -76,18 +90,33 @@ export default function Product() {
                   type="button"
                   className={v.sku === selected.sku ? "is-active" : ""}
                   aria-pressed={v.sku === selected.sku}
-                  onClick={() => setSku(v.sku)}
+                  onClick={() => {
+                    setSku(v.sku);
+                    setAdded(false);
+                  }}
                 >
                   {variantSize(v.name, family.title)}
                 </button>
               ))}
             </div>
-            <Link
-              href={`/kontakt?product=${encodeURIComponent(family.id)}&sku=${encodeURIComponent(selected.sku)}`}
-              className="btn btn--orange"
-            >
+            <button type="button" className="btn btn--orange" onClick={onEnquire}>
               {t.products.enquire} <ArrowRight size={16} />
-            </Link>
+            </button>
+            {added ? (
+              <div className="enquiry-confirm" role="status">
+                <p>
+                  <Check size={16} aria-hidden /> {t.products.enquireAdded}
+                </p>
+                <div className="enquiry-confirm__actions">
+                  <Link href="/proizvodi" className="btn btn--ink">
+                    {t.products.enquireContinue}
+                  </Link>
+                  <Link href="/kontakt" className="btn btn--blue">
+                    {t.products.enquireGo}
+                  </Link>
+                </div>
+              </div>
+            ) : null}
             <p className="pdp__note">{t.pricePage.note}</p>
           </div>
         </div>
@@ -107,7 +136,10 @@ export default function Product() {
                 <tr
                   key={v.sku}
                   className={v.sku === selected.sku ? "is-active" : ""}
-                  onClick={() => setSku(v.sku)}
+                  onClick={() => {
+                    setSku(v.sku);
+                    setAdded(false);
+                  }}
                 >
                   <td>{variantSize(v.name, family.title)}</td>
                   <td>{v.sku}</td>

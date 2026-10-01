@@ -3465,6 +3465,39 @@
   line-height: 1.5;
 }
 
+.enquiry-confirm {
+  display: grid;
+  gap: 12px;
+  margin: 14px 0 0;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+
+.enquiry-confirm p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.enquiry-confirm__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.enquiry-confirm__actions .btn {
+  min-height: 42px;
+  padding: 0 18px;
+  font-size: 14px;
+}
+
 .pdp__label {
   margin: 18px 0 8px;
   font-family: var(--font-display);

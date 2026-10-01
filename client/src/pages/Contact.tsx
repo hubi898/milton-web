@@ -1,12 +1,10 @@
 import { FormEvent, useEffect, useState } from "react";
-import { Link, useLocation, useSearch } from "wouter";
+import { Link } from "wouter";
 import { Plus, X } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { CONTACT_EMAIL, contactPhones } from "@/data/contacts";
-import { getProductFamily, variantSize } from "@/data/productFamilies";
 import {
-  addEnquiryItem,
   getEnquiryItems,
   removeEnquiryItem,
   type EnquiryItem,
@@ -14,31 +12,12 @@ import {
 
 export default function Contact() {
   const { t } = useLanguage();
-  const search = useSearch();
-  const [, setLocation] = useLocation();
   const [sent, setSent] = useState(false);
   const [items, setItems] = useState<EnquiryItem[]>([]);
 
   useEffect(() => {
-    const params = new URLSearchParams(search);
-    const familyId = params.get("product") ?? "";
-    const sku = params.get("sku") ?? "";
-    if (familyId && sku) {
-      const family = getProductFamily(familyId);
-      const variant = family?.variants.find((v) => v.sku === sku);
-      if (family && variant) {
-        addEnquiryItem({
-          familyId: family.id,
-          sku: variant.sku,
-          title: family.title,
-          size: variantSize(variant.name, family.title),
-          name: variant.name,
-        });
-      }
-      setLocation("/kontakt", { replace: true });
-    }
     setItems(getEnquiryItems());
-  }, [search, setLocation]);
+  }, []);
 
   const onRemove = (sku: string) => {
     setItems(removeEnquiryItem(sku));
