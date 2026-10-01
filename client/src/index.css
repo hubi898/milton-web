@@ -2772,8 +2772,10 @@
 }
 
 .legal {
-  padding: 140px clamp(20px, 5vw, 48px) 100px;
-  max-width: 720px;
+  padding: 140px var(--gutter) 100px;
+  max-width: var(--page);
+  margin: 0 auto;
+  text-align: center;
 }
 
 .legal h1 {
@@ -2786,6 +2788,7 @@
   font-size: 17px;
   line-height: 1.65;
   margin-bottom: 16px;
+  max-width: none;
 }
 
 .legal__section {
@@ -3465,36 +3468,97 @@
   line-height: 1.5;
 }
 
-.enquiry-confirm {
+.enquiry-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
   display: grid;
-  gap: 12px;
-  margin: 14px 0 0;
-  padding: 14px 16px;
-  border-radius: 16px;
-  background: var(--bg);
-  border: 1px solid var(--line);
+  place-items: center;
+  padding: var(--gutter);
 }
 
-.enquiry-confirm p {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.enquiry-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
   margin: 0;
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 700;
+  background: rgba(18, 22, 36, 0.48);
+  cursor: pointer;
+}
+
+.enquiry-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 420px);
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  text-align: center;
+  padding: 28px 24px 24px;
+  border-radius: 22px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 60px rgba(18, 22, 36, 0.22);
+  animation: enquiry-modal-in 0.22s ease;
+}
+
+@keyframes enquiry-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.enquiry-modal__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: rgba(40, 48, 144, 0.1);
   color: var(--blue);
 }
 
-.enquiry-confirm__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.enquiry-modal__panel h2 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.25;
 }
 
-.enquiry-confirm__actions .btn {
-  min-height: 42px;
-  padding: 0 18px;
+.enquiry-modal__item {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.enquiry-modal__item span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.enquiry-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.enquiry-modal__actions .btn {
+  flex: 1 1 140px;
+  min-height: 44px;
+  padding: 0 16px;
   font-size: 14px;
 }
 
@@ -3508,8 +3572,8 @@
 }
 
 .pdp__sizes {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(76px, max-content));
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 22px;
 }
