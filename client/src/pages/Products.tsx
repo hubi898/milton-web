@@ -35,7 +35,25 @@ export default function Products() {
     <SiteShell headerTone="light">
       <section className="range-intro range-intro--lead">
         <h1>{t.products.h1}</h1>
-        <p className="products-styron-note">{t.products.styronNote}</p>
+      </section>
+
+      <section className="usp-block">
+        <h2>{t.about.whyH2}</h2>
+        <ul>
+          {t.about.strengths.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="partner-panel partner-panel--text">
+        <h2>Styron Kft.</h2>
+        <p>{t.about.partnerP1}</p>
+        <p>{t.about.partnerP2}</p>
+        <p>{t.about.partnerP3}</p>
+        <Link href="/katalozi/styron" className="link-arrow">
+          {t.about.partnerLink} <ArrowRight size={16} />
+        </Link>
       </section>
 
       <section className="plist" id="ponuda">
@@ -77,25 +95,6 @@ export default function Products() {
           </div>
         )}
         <p className="plist__note">{t.pricePage.note}</p>
-      </section>
-
-      <section className="usp-block">
-        <h2>{t.about.whyH2}</h2>
-        <ul>
-          {t.about.strengths.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="partner-panel partner-panel--text">
-        <h2>Styron Kft.</h2>
-        <p>{t.about.partnerP1}</p>
-        <p>{t.about.partnerP2}</p>
-        <p>{t.about.partnerP3}</p>
-        <Link href="/katalozi/styron" className="link-arrow">
-          {t.about.partnerLink} <ArrowRight size={16} />
-        </Link>
       </section>
     </SiteShell>
   );

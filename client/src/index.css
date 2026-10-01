@@ -1419,7 +1419,7 @@
   color: var(--muted);
   font-size: 17px;
   line-height: 1.65;
-  max-width: 68ch;
+  max-width: none;
   margin: 0 auto;
 }
 
