@@ -40,7 +40,7 @@ export default function About() {
             const copy = t.team[member.id];
             return (
               <article key={member.id}>
-                <div className={`team__photo team__photo--${member.id}`}>
+                <div className="team__photo">
                   {member.photo ? (
                     <img src={publicUrl(member.photo)} alt={copy.name} />
                   ) : (

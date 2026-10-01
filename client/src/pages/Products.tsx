@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, Download, Search } from "lucide-react";
+import { Download, Search } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import { assortment } from "@/data/assortment";
 import { PRICE_LIST_DATE, PRICE_LIST_PDF, type PriceCategory } from "@/data/priceList";
@@ -55,7 +55,6 @@ export default function Products() {
     <SiteShell headerTone="light">
       <section className="range-intro range-intro--lead">
         <h1>{t.products.h1}</h1>
-        <p>{t.about.p2}</p>
       </section>
 
       <div className="range-ribbon" aria-hidden="true">
@@ -69,26 +68,6 @@ export default function Products() {
           ))}
         </div>
       </div>
-
-      <section className="styron-quiet">
-        <div>
-          <h2>{t.products.styronTitle}</h2>
-          <p>{t.products.styronP}</p>
-          <p>{t.about.iso}</p>
-          <Link href="/katalozi/styron" className="link-arrow">
-            {t.about.partnerLink} <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
-
-      <section className="usp-block usp-block--quiet">
-        <h2>{t.products.qualityH2}</h2>
-        <ul>
-          {t.about.strengths.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
 
       <section className="plist" id="ponuda">
         <div className="plist__tools">
