@@ -627,16 +627,13 @@
   --room-bath: 0;
   --room-util: 0;
   --room-garage: 0;
-  --hz-paper: #f0f2f7;
-  --hz-ink: #2a2e3a;
-  --hz-ink-soft: rgba(42, 46, 58, 0.55);
-  --hz-accent: #e07820;
+  --hz-paper: var(--bg);
+  --hz-ink: var(--ink);
+  --hz-ink-soft: var(--muted);
+  --hz-accent: var(--orange);
   position: relative;
   height: 420vh;
-  background:
-    linear-gradient(180deg, var(--bg) 0%, transparent 28%),
-    linear-gradient(0deg, var(--bg) 0%, transparent 28%),
-    var(--hz-paper);
+  background: var(--bg);
 }
 
 .hz__pin {
@@ -647,16 +644,25 @@
   overflow: hidden;
 }
 
+.hz__pin::before,
 .hz__pin::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
   z-index: 3;
-  height: min(22vh, 180px);
-  background: linear-gradient(to top, var(--bg), transparent);
+  height: min(18vh, 140px);
   pointer-events: none;
+}
+
+.hz__pin::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg), transparent);
+}
+
+.hz__pin::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg), transparent);
 }
 
 .hz__world {
@@ -687,6 +693,7 @@
   will-change: transform, opacity;
   overflow: visible;
   opacity: var(--house);
+  filter: drop-shadow(0 24px 48px rgba(20, 24, 46, 0.1));
 }
 
 .hz__media {
@@ -701,8 +708,6 @@
   height: auto;
   user-select: none;
   pointer-events: none;
-  outline: 3px solid var(--orange);
-  outline-offset: 0;
 }
 
 .hz__callouts {
@@ -1491,7 +1496,7 @@
 
 .mf__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
   gap: 40px;
   max-width: var(--page);
   margin: 0 auto;
@@ -1548,6 +1553,20 @@
   font-size: 12px;
   font-weight: 500;
   color: var(--muted);
+}
+
+.mf__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.mf__credit img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
 }
 
 .mf__legal {
@@ -3479,7 +3498,7 @@
 }
 
 .mf__grid {
-  grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1.4fr repeat(2, minmax(0, 1fr));
 }
 
 /* ─── Responsive ────────────────────────────────────────── */

@@ -19,7 +19,6 @@ export default function About() {
       </section>
 
       <section className="story-plain">
-        <h2>{t.about.storyH2}</h2>
         <p>{t.about.storyP1}</p>
       </section>
 

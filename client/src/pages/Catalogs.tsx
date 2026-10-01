@@ -61,11 +61,7 @@ export default function Catalogs() {
             </>
           );
           return ready ? (
-            <Link
-              key={c.id}
-              href={c.id === "cenovnik-ms-2023" ? "/proizvodi#ponuda" : `/katalozi/${c.id}`}
-              className="catalog-rows__item"
-            >
+            <Link key={c.id} href={`/katalozi/${c.id}`} className="catalog-rows__item">
               {body}
             </Link>
           ) : (

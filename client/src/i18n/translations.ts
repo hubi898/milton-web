@@ -342,8 +342,7 @@ const sr = {
     styronTitle: "Styron",
     styronP:
       "Milton je veleprodajni zastupnik Styron proizvoda u Srbiji: podni slivnici, tuš i spoljne kanalice, sifoni, WC sistemi i Jolly Flex. Katalog 2025/26 ostaje dostupan za listanje.",
-    styronNote:
-      "Milton je veleprodajni zastupnik Styron proizvoda u Srbiji. Katalog 2025/26 dostupan je za listanje.",
+    styronNote: "Milton je veleprodajni zastupnik Styron proizvoda u Srbiji.",
     catalogBtn: "Katalog",
     qualityH2: "Kvalitet koji drži ponudu",
     size: "Veličina",
@@ -717,8 +716,7 @@ const hu: Dict = {
     styronTitle: "Styron",
     styronP:
       "A Milton a Styron termékek nagykereskedelmi képviselője Szerbiában: padlóösszefolyók, zuhany- és kültéri folyókák, szifonok, WC-rendszerek és Jolly Flex. A 2025/26-os katalógus továbbra is lapozható.",
-    styronNote:
-      "A Milton a Styron termékek nagykereskedelmi képviselője Szerbiában. A 2025/26-os katalógus lapozható.",
+    styronNote: "A Milton a Styron termékek nagykereskedelmi képviselője Szerbiában.",
     catalogBtn: "Katalógus",
     qualityH2: "A kínálatot a minőség tartja",
     size: "Méret",
@@ -1090,8 +1088,7 @@ const en: Dict = {
     styronTitle: "Styron",
     styronP:
       "Milton is the wholesale representative of Styron products in Serbia: floor drains, shower and outdoor channels, traps, WC systems and Jolly Flex. The 2025/26 catalog stays available to browse.",
-    styronNote:
-      "Milton is the wholesale representative of Styron products in Serbia. The 2025/26 catalog is available to browse.",
+    styronNote: "Milton is the wholesale representative of Styron products in Serbia.",
     catalogBtn: "Catalog",
     qualityH2: "Quality that holds the range",
     size: "Size",
