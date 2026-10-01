@@ -1522,12 +1522,6 @@
 
 .mf__grid > :nth-child(3) {
   justify-self: end;
-  text-align: right;
-}
-
-.mf__grid > :nth-child(3) a,
-.mf__grid > :nth-child(3) p {
-  text-align: right;
 }
 
 .mf__grid h4 {
@@ -3986,12 +3980,6 @@
   .mf__grid > :nth-child(2),
   .mf__grid > :nth-child(3) {
     justify-self: start;
-    text-align: left;
-  }
-
-  .mf__grid > :nth-child(3) a,
-  .mf__grid > :nth-child(3) p {
-    text-align: left;
   }
 
   .catalog-rows__item {
