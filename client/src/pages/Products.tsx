@@ -1,8 +1,8 @@
 import { Link } from "wouter";
 import { useEffect, useMemo, useState } from "react";
-import { Download, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
-import { PRICE_LIST_DATE, PRICE_LIST_PDF, type PriceCategory } from "@/data/priceList";
+import { type PriceCategory } from "@/data/priceList";
 import { productFamilies } from "@/data/productFamilies";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { publicUrl } from "@/lib/publicUrl";
@@ -68,14 +68,10 @@ export default function Products() {
               type="search"
             />
           </label>
-          <a className="btn btn--blue" href={publicUrl(PRICE_LIST_PDF)} download>
-            <Download size={16} /> {t.pricePage.download}
-          </a>
+          <Link href="/katalozi" className="btn btn--blue">
+            {t.products.catalogBtn}
+          </Link>
         </div>
-        <p className="filter-note">
-          {t.pricePage.vat} · {t.pricePage.dated} {PRICE_LIST_DATE} · {filtered.length}{" "}
-          {t.pricePage.count}
-        </p>
 
         <div className="plist__cats" role="tablist" aria-label={t.products.eyebrow}>
           <button type="button" className={cat === "all" ? "is-active" : ""} onClick={() => setCat("all")}>
