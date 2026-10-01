@@ -40,7 +40,7 @@ export default function About() {
             const copy = t.team[member.id];
             return (
               <article key={member.id}>
-                <div className="team__photo">
+                <div className={`team__photo team__photo--${member.id}`}>
                   {member.photo ? (
                     <img src={publicUrl(member.photo)} alt={copy.name} />
                   ) : (
@@ -50,7 +50,6 @@ export default function About() {
                 <div className="team__body">
                   <p className="team__role">{copy.role}</p>
                   <h3>{copy.name}</h3>
-                  <p className="team__focus">{copy.focus}</p>
                   <div className="team__contact">
                     <a href={member.phoneHref}>{member.phone}</a>
                     <a href={`mailto:${member.email}`}>{member.email}</a>
