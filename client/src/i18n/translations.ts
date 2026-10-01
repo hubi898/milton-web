@@ -154,6 +154,7 @@ const sr = {
     partnerP3:
       "Milton je veleprodajni zastupnik Styron proizvoda u Srbiji. Ta saradnja, koja traje više decenija, oblikovala je naš asortiman i način rada.",
     partnerLink: "Styron katalog 2025/26",
+    partnersH2: "Naši partneri",
     showerAlt: "Styron tuš kanalica",
     drainAlt: "Styron podni slivnik",
     iso: "Proizvodi i procesi ispunjavaju međunarodno priznate standarde — uključujući ISO 9001 (kvalitet) i ISO 14001 (zaštita životne sredine). To odražava trajnu posvećenost stalnom kvalitetu i odgovornom poslovanju.",
@@ -535,6 +536,7 @@ const hu: Dict = {
     partnerP3:
       "A Milton a Styron termékek nagykereskedelmi képviselője Szerbiában. Ez a több évtizedes együttműködés formálta a kínálatunkat és a munkánkat.",
     partnerLink: "Styron katalógus 2025/26",
+    partnersH2: "Partnereink",
     showerAlt: "Styron zuhanyfolyóka",
     drainAlt: "Styron padlóösszefolyó",
     iso: "A termékek és a folyamatok nemzetközileg elismert szabványoknak felelnek meg — köztük az ISO 9001 (minőség) és az ISO 14001 (környezetvédelem). Ez a tartós minőség és a felelős működés iránti elkötelezettséget tükrözi.",
@@ -914,6 +916,7 @@ const en: Dict = {
     partnerP3:
       "Milton is the wholesale representative of Styron products in Serbia. That decades-long partnership has shaped our range and the way we work.",
     partnerLink: "Styron catalog 2025/26",
+    partnersH2: "Our partners",
     showerAlt: "Styron shower channel",
     drainAlt: "Styron floor drain",
     iso: "Products and processes meet internationally recognized standards — including ISO 9001 (quality) and ISO 14001 (environmental protection). That reflects a lasting commitment to consistent quality and responsible business.",

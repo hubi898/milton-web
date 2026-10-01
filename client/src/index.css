@@ -1404,10 +1404,23 @@
 /* ─── Logos ─────────────────────────────────────────────── */
 
 .logos-section {
-  padding: 64px clamp(20px, 5vw, 48px);
+  padding: 8px var(--gutter) 56px;
   max-width: var(--page);
   margin: 0 auto;
   text-align: center;
+}
+
+.logos-section h2 {
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 0 0 14px;
+}
+
+.logos-section > p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 68ch;
+  margin: 0 auto;
 }
 
 .logos-row {
@@ -1812,8 +1825,8 @@
 }
 
 .partner-panel__copy h2 {
-  font-size: clamp(32px, 4vw, 48px);
-  margin: 6px 0 18px;
+  font-size: clamp(26px, 3vw, 36px);
+  margin: 0 0 18px;
 }
 
 .partner-panel__copy p {
@@ -1869,7 +1882,7 @@
 }
 
 .usp-block h2 {
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(26px, 3vw, 36px);
   margin: 6px 0 24px;
 }
 
@@ -3266,16 +3279,6 @@
 .founder-note {
   padding-top: 8px;
   padding-bottom: 8px;
-}
-
-.founder-note h2 {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.founder-note p {
-  font-size: 15px;
 }
 
 .vision-block {
