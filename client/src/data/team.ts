@@ -7,7 +7,6 @@ export type TeamMember = {
   phone: string;
   phoneHref: string;
   email: string;
-  /** Drop a photo at this path later; cards fall back to initials. */
   photo?: string;
 };
 
@@ -18,7 +17,22 @@ function phoneFor(id: TeamId) {
 }
 
 export const team: TeamMember[] = [
-  { id: "bozso", initials: "KB", ...phoneFor("bozso") },
-  { id: "bicskei", initials: "KB", ...phoneFor("bicskei") },
-  { id: "makra", initials: "MÁ", ...phoneFor("makra") },
+  {
+    id: "lilla",
+    initials: "BL",
+    photo: "/images/team/bozso-lilla.jpg",
+    ...phoneFor("lilla"),
+  },
+  {
+    id: "ilona",
+    initials: "BI",
+    photo: "/images/team/bozso-ilona.jpg",
+    ...phoneFor("ilona"),
+  },
+  {
+    id: "makra",
+    initials: "MÁ",
+    photo: "/images/team/makra-akos.jpg",
+    ...phoneFor("makra"),
+  },
 ];

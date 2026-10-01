@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import { team } from "@/data/team";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { publicUrl } from "@/lib/publicUrl";
 
 export default function About() {
   const { t } = useLanguage();
@@ -41,7 +42,7 @@ export default function About() {
               <article key={member.id}>
                 <div className="team__photo">
                   {member.photo ? (
-                    <img src={member.photo} alt={copy.name} />
+                    <img src={publicUrl(member.photo)} alt={copy.name} />
                   ) : (
                     <span className="team__avatar">{member.initials}</span>
                   )}

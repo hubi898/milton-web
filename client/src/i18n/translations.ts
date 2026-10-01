@@ -197,19 +197,19 @@ const sr = {
     ctaCatalogs: "Pogledajte kataloge",
   },
   team: {
-    bozso: {
-      name: "Karolj Božo",
-      role: "Osnivač",
-      focus: "Vođenje firme i dugoročna partnerstva. Izgradio Milton od nule u Kanjiži.",
+    lilla: {
+      name: "Bózsó Lilla",
+      role: "Direktorka",
+      focus: "Vođenje firme, partnerstva i strateški razvoj Miltona.",
     },
-    bicskei: {
-      name: "Károly Bicskei",
-      role: "Veleprodaja",
-      focus: "Asortiman, nabavka i rad sa distributerima i izvođačima.",
+    ilona: {
+      name: "Bózsó Ilona",
+      role: "Vlasnica",
+      focus: "Vlasništvo i dugoročni pravac kompanije.",
     },
     makra: {
       name: "Akoš Makra",
-      role: "Prodaja",
+      role: "Commercial Manager",
       focus: "Narudžbine, ponude i svakodnevna podrška kupcima.",
     },
   },
@@ -236,8 +236,8 @@ const sr = {
     phoneLabels: {
       central: "Centrala",
       fax: "Fax",
-      bozso: "Karolj Božo",
-      bicskei: "Károly Bicskei",
+      lilla: "Bózsó Lilla",
+      ilona: "Bózsó Ilona",
       makra: "Akoš Makra",
     },
   },
@@ -569,19 +569,19 @@ const hu: Dict = {
     ctaCatalogs: "Katalógusok",
   },
   team: {
-    bozso: {
-      name: "Bózsó Károly",
-      role: "Alapító, ügyvezető",
-      focus: "A cég vezetése és a hosszú távú partnerségek. A Miltont Magyarkanizsán a nulláról építette fel.",
+    lilla: {
+      name: "Bózsó Lilla",
+      role: "Igazgató",
+      focus: "A cég vezetése, partnerségek és a Milton stratégiai fejlődése.",
     },
-    bicskei: {
-      name: "Károly Bicskei",
-      role: "Kereskedelem",
-      focus: "Kínálat, beszerzés, forgalmazók és kivitelezők.",
+    ilona: {
+      name: "Bózsó Ilona",
+      role: "Tulajdonos",
+      focus: "Tulajdonosi szerep és a vállalat hosszú távú iránya.",
     },
     makra: {
       name: "Makra Ákos",
-      role: "Értékesítés",
+      role: "Commercial Manager",
       focus: "Rendelések, ajánlatok és a vásárlók mindennapi támogatása.",
     },
   },
@@ -608,8 +608,8 @@ const hu: Dict = {
     phoneLabels: {
       central: "Központ",
       fax: "Fax",
-      bozso: "Bózsó Károly",
-      bicskei: "Károly Bicskei",
+      lilla: "Bózsó Lilla",
+      ilona: "Bózsó Ilona",
       makra: "Makra Ákos",
     },
   },
@@ -939,19 +939,19 @@ const en: Dict = {
     ctaCatalogs: "See catalogs",
   },
   team: {
-    bozso: {
-      name: "Károly Bózsó",
-      role: "Founder",
-      focus: "Running the company and long-term partnerships. Built Milton from the ground up in Kanjiža.",
+    lilla: {
+      name: "Bózsó Lilla",
+      role: "Director",
+      focus: "Running the company, partnerships and Milton’s strategic growth.",
     },
-    bicskei: {
-      name: "Károly Bicskei",
-      role: "Wholesale",
-      focus: "Range, purchasing, and work with distributors and contractors.",
+    ilona: {
+      name: "Bózsó Ilona",
+      role: "Owner",
+      focus: "Ownership and the company’s long-term direction.",
     },
     makra: {
       name: "Ákos Makra",
-      role: "Sales",
+      role: "Commercial Manager",
       focus: "Orders, quotes and day-to-day customer support.",
     },
   },
@@ -978,8 +978,8 @@ const en: Dict = {
     phoneLabels: {
       central: "Switchboard",
       fax: "Fax",
-      bozso: "Károly Bózsó",
-      bicskei: "Károly Bicskei",
+      lilla: "Bózsó Lilla",
+      ilona: "Bózsó Ilona",
       makra: "Ákos Makra",
     },
   },

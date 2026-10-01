@@ -233,7 +233,7 @@ export default function Home() {
                         <Link href="/proizvodi" className="hz__tag">
                           <img src={publicUrl(c.image)} alt="" />
                           <span>
-                            <em>{t.hero.rooms[c.room]}</em>
+                            <em>{c.sku}</em>
                             {t.hero.pins[c.sku]}
                           </span>
                         </Link>
@@ -251,10 +251,24 @@ export default function Home() {
           <div className="hz__chapter" aria-hidden>
             {chapterMeta && (
               <>
-                <span>{chapterMeta.index} / 03</span>
+                <span>{chapterMeta.index} / 03 · {t.nav.products}</span>
                 <strong>{t.hero.rooms[chapterMeta.id]}</strong>
               </>
             )}
+          </div>
+
+          <div className="hz__picks" aria-hidden={!chapter}>
+            <p>{t.nav.products}</p>
+            <div className="hz__picks-row">
+              {houseCallouts
+                .filter((c) => !chapter || c.room === chapter)
+                .map((c) => (
+                  <Link key={`pick-${c.sku}`} href="/proizvodi" className="hz__pick">
+                    <img src={publicUrl(c.image)} alt="" />
+                    <span>{t.hero.pins[c.sku]}</span>
+                  </Link>
+                ))}
+            </div>
           </div>
 
           <div className="hz__hint">
