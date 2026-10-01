@@ -2,7 +2,6 @@ import { Link } from "wouter";
 import { useEffect, useMemo, useState } from "react";
 import { Download, Search } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
-import { assortment } from "@/data/assortment";
 import { PRICE_LIST_DATE, PRICE_LIST_PDF, type PriceCategory } from "@/data/priceList";
 import { productFamilies } from "@/data/productFamilies";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -55,19 +54,8 @@ export default function Products() {
     <SiteShell headerTone="light">
       <section className="range-intro range-intro--lead">
         <h1>{t.products.h1}</h1>
+        <p className="products-styron-note">{t.products.styronNote}</p>
       </section>
-
-      <div className="range-ribbon" aria-hidden="true">
-        <div className="range-ribbon__track">
-          {[0, 1, 2, 3].map((copy) => (
-            <ul key={copy} className="range-ribbon__list">
-              {assortment.map((item) => (
-                <li key={`${copy}-${item.id}`}>{t.assortment[item.id].title}</li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </div>
 
       <section className="plist" id="ponuda">
         <div className="plist__tools">
