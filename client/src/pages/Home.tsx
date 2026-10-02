@@ -98,7 +98,7 @@ export default function Home() {
     const apply = (p: number) => {
       const mobile = window.innerWidth < 760;
       const cam = sampleCam(p);
-      const scale = reduce ? 0.86 : 1 + (cam.scale - 1) * (mobile ? 0.72 : 1);
+      const scale = reduce ? 0.86 : 1 + (cam.scale - 1) * (mobile ? 1.8 : 1);
       const tx = cam.tx * (mobile ? 0.4 : 1);
       const ty = cam.ty * (mobile ? 0.45 : 1);
       const zoomAmt = clamp01((scale - 0.8) / 1.0);

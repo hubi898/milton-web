@@ -64,6 +64,19 @@ export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" 
           <Link href="/kontakt" className={`mh__cta mh__cta--menu ${contactActive ? "is-active" : ""}`}>
             {t.nav.contact}
           </Link>
+          <div className="mh__langs mh__langs--menu" role="group" aria-label={t.nav.language}>
+            {LANGS.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={lang === item.id ? "is-active" : ""}
+                aria-pressed={lang === item.id}
+                onClick={() => setLang(item.id)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
         </nav>
 
         <Link href="/kontakt" className={`mh__cta ${contactActive ? "is-active" : ""}`}>
@@ -80,7 +93,7 @@ export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" 
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
 
-        <div className="mh__langs" role="group" aria-label={t.nav.language}>
+        <div className="mh__langs mh__langs--bar" role="group" aria-label={t.nav.language}>
           {LANGS.map((item) => (
             <button
               key={item.id}
