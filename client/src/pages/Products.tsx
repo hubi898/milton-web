@@ -1,6 +1,6 @@
 import { Link } from "wouter";
-import { useMemo, useState } from "react";
-import { ArrowRight, Search } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { ArrowDown, ArrowRight, Search } from "lucide-react";
 import SiteShell from "@/components/SiteShell";
 import { productFamilies } from "@/data/productFamilies";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -18,6 +18,18 @@ export default function Products() {
   const { lang, t } = useLanguage();
   const [q, setQ] = useState("");
   const families = useMemo(() => productFamilies(), []);
+  const [atTop, setAtTop] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setAtTop(window.scrollY < 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const jumpToProducts = () => {
+    document.getElementById("ponuda")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   const filtered = useMemo(() => {
     const needle = q.trim().toLowerCase();
@@ -96,6 +108,16 @@ export default function Products() {
         )}
         <p className="plist__note">{t.pricePage.note}</p>
       </section>
+
+      <button
+        type="button"
+        className={`scroll-down ${atTop ? "is-visible" : ""}`}
+        onClick={jumpToProducts}
+        aria-label={t.nav.products}
+        tabIndex={atTop ? 0 : -1}
+      >
+        <ArrowDown size={20} />
+      </button>
     </SiteShell>
   );
 }

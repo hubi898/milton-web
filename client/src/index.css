@@ -2206,6 +2206,52 @@
   max-width: var(--page);
   margin: 0 auto;
   padding: 0 var(--gutter) 80px;
+  scroll-margin-top: 96px;
+}
+
+.scroll-down {
+  position: fixed;
+  left: 50%;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--orange-hot);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(24, 28, 48, 0.18);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.scroll-down.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+  animation: scroll-down-bob 2s ease-in-out infinite;
+}
+
+.scroll-down:hover {
+  background: #d96f10;
+}
+
+@keyframes scroll-down-bob {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 6px);
+  }
 }
 
 .plist__tools {
