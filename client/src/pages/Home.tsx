@@ -8,9 +8,8 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { publicUrl } from "@/lib/publicUrl";
 
 const PARTNERS = [
-  { src: "/images/partner-styron.png", name: "Styron" },
-  { src: "/images/partner-alca.png", name: "Alca" },
-  { src: "/images/partner-arco.png", name: "Arco" },
+  { src: "/images/partner-styron.png", name: "Styron Kft." },
+  { src: "/images/partner-merkapt.png", name: "Merkapt Zrt." },
 ] as const;
 
 function clamp01(n: number) {
@@ -203,6 +202,52 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="split split--tight">
+        <div className="split__media">
+          <img src={publicUrl("/images/styron/install.jpg")} alt={t.home.aboutImgAlt} />
+        </div>
+        <div className="split__copy">
+          <p className="eyebrow">{t.home.aboutEyebrow}</p>
+          <h2>{t.home.aboutH2}</h2>
+          <p>{t.home.aboutP}</p>
+          <Link href="/o-nama" className="link-arrow">
+            {t.home.aboutLink} <ArrowUpRight size={16} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="logos-section">
+        <h2>{t.about.partnersH2}</h2>
+        <p>{t.about.p1}</p>
+        <div className="logos-row">
+          {PARTNERS.map((partner) => (
+            <img key={partner.name} src={publicUrl(partner.src)} alt={partner.name} />
+          ))}
+        </div>
+      </section>
+
+      <section className="cta-block">
+        <div className="cta-block__inner">
+          <div>
+            <p className="eyebrow eyebrow--orange">{t.home.ctaEyebrow}</p>
+            <h2>
+              {t.home.ctaH2a}
+              <br />
+              {t.home.ctaH2b}
+            </h2>
+            <p>{t.home.ctaP}</p>
+          </div>
+          <div className="cta-block__actions">
+            <a className="btn btn--orange" href="tel:+381244878354">
+              024 / 487 8354
+            </a>
+            <Link href="/kontakt" className="btn btn--white">
+              {t.home.ctaForm} <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="hz" ref={heroRef} aria-label={t.hero.aria}>
         <div className="hz__pin">
           <i className="hz__progress" aria-hidden />
@@ -282,52 +327,6 @@ export default function Home() {
             <i />
           </div>
 
-        </div>
-      </section>
-
-      <section className="split split--tight">
-        <div className="split__media">
-          <img src={publicUrl("/images/styron/install.jpg")} alt={t.home.aboutImgAlt} />
-        </div>
-        <div className="split__copy">
-          <p className="eyebrow">{t.home.aboutEyebrow}</p>
-          <h2>{t.home.aboutH2}</h2>
-          <p>{t.home.aboutP}</p>
-          <Link href="/o-nama" className="link-arrow">
-            {t.home.aboutLink} <ArrowUpRight size={16} />
-          </Link>
-        </div>
-      </section>
-
-      <section className="logos-section">
-        <h2>{t.about.partnersH2}</h2>
-        <p>{t.about.p1}</p>
-        <div className="logos-row">
-          {PARTNERS.map((partner) => (
-            <img key={partner.name} src={publicUrl(partner.src)} alt={partner.name} />
-          ))}
-        </div>
-      </section>
-
-      <section className="cta-block">
-        <div className="cta-block__inner">
-          <div>
-            <p className="eyebrow eyebrow--orange">{t.home.ctaEyebrow}</p>
-            <h2>
-              {t.home.ctaH2a}
-              <br />
-              {t.home.ctaH2b}
-            </h2>
-            <p>{t.home.ctaP}</p>
-          </div>
-          <div className="cta-block__actions">
-            <a className="btn btn--orange" href="tel:+381244878354">
-              024 / 487 8354
-            </a>
-            <Link href="/kontakt" className="btn btn--white">
-              {t.home.ctaForm} <ArrowRight size={16} />
-            </Link>
-          </div>
         </div>
       </section>
     </SiteShell>

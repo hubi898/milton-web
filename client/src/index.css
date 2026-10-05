@@ -1479,7 +1479,7 @@
 
 .cta-block {
   max-width: var(--page);
-  margin: 0 auto 64px;
+  margin: 0 auto 40px;
   padding: 0 var(--gutter);
   background: none;
   box-shadow: none;
@@ -2058,8 +2058,8 @@
 
 .team article {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(260px, 1.15fr);
-  align-items: stretch;
+  grid-template-columns: minmax(160px, 220px) minmax(0, 1fr);
+  align-items: center;
   overflow: hidden;
   border-radius: 22px;
   background: var(--surface);
@@ -2071,12 +2071,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
   background: #eef0f5;
 }
 
 .team__photo img {
   width: 100%;
+  max-width: 188px;
   height: auto;
+  max-height: 128px;
   display: block;
   object-fit: contain;
 }
@@ -3219,7 +3222,7 @@
   color: var(--blue);
 }
 
-/* ─── Intro (logo + szöveg, a ház felett) ──────────────── */
+/* ─── Intro (logo + szöveg) ──────────────── */
 
 .intro {
   min-height: 100vh;
@@ -3981,6 +3984,11 @@
     grid-template-columns: 1fr;
   }
 
+  .team__photo img {
+    max-width: 220px;
+    max-height: 140px;
+  }
+
   .mh__burger {
     display: flex;
   }
@@ -4127,6 +4135,15 @@
 
   .team article {
     grid-template-columns: 1fr;
+  }
+
+  .team__photo {
+    padding: 14px 14px 0;
+  }
+
+  .team__photo img {
+    max-width: 200px;
+    max-height: 120px;
   }
 
   .mh__inner {
