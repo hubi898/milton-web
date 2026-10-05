@@ -2067,19 +2067,16 @@
 }
 
 .team__photo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 16px 0;
-  background: #eef0f5;
+  overflow: hidden;
+  background: transparent;
 }
 
 .team__photo img {
   width: 100%;
-  height: auto;
-  max-height: 200px;
+  height: 200px;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: 20% 16%;
 }
 
 .team__avatar {
@@ -3981,7 +3978,7 @@
   }
 
   .team__photo img {
-    max-height: 168px;
+    height: 168px;
   }
 
   .team__body {
@@ -4133,7 +4130,7 @@
   }
 
   .team__photo img {
-    max-height: 180px;
+    height: 180px;
   }
 
   .mh__inner {
