@@ -2079,6 +2079,10 @@
   object-position: 20% 16%;
 }
 
+.team__photo img[src*="makra-akos"] {
+  object-position: 20% 0%;
+}
+
 .team__avatar {
   padding: 48px 0;
   font-family: var(--font-display);
