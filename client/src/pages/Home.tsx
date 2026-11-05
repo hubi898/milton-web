@@ -239,7 +239,7 @@ export default function Home() {
           </div>
           <div className="cta-block__actions">
             <a className="btn btn--orange" href="tel:+381244878354">
-              024 / 487 8354
+              +381 24 487 8354
             </a>
             <Link href="/kontakt" className="btn btn--white">
               {t.home.ctaForm} <ArrowRight size={16} />
