@@ -1023,8 +1023,8 @@ const en: Dict = {
   },
   legal: {
     eyebrow: "Legal",
-    privacyTitle: "Privacy policy",
-    termsTitle: "Terms of use",
+    privacyTitle: "Privacy Policy",
+    termsTitle: "Terms and Conditions",
     download: "Download document",
     terms: [
       {

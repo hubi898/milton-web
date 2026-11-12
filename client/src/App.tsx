@@ -30,7 +30,11 @@ function Router() {
         <Route path="/cenovnik" component={Products} />
         <Route path="/kontakt" component={Contact} />
         <Route path="/privatnost" component={Privacy} />
+        <Route path="/adatvedelem" component={Privacy} />
+        <Route path="/privacy" component={Privacy} />
         <Route path="/uslovi" component={Terms} />
+        <Route path="/aszf" component={Terms} />
+        <Route path="/terms" component={Terms} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>
