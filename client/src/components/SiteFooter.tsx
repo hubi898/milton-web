@@ -1,10 +1,11 @@
 import { Link } from "wouter";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { LEGAL_PATHS } from "@/i18n/legalPaths";
 import { CONTACT_EMAIL } from "@/data/contacts";
 import { publicUrl } from "@/lib/publicUrl";
 
 export default function SiteFooter() {
-  const { t } = useLanguage();
+  const { lang, t } = useLanguage();
   return (
     <footer className="mf">
       <div className="mf__grid">
@@ -32,8 +33,8 @@ export default function SiteFooter() {
           © {new Date().getFullYear()} MILTON d.o.o. · {t.footer.rights}
         </span>
         <nav className="mf__legal" aria-label={t.footer.legal}>
-          <Link href="/privatnost">{t.footer.privacy}</Link>
-          <Link href="/uslovi">{t.footer.terms}</Link>
+          <Link href={LEGAL_PATHS[lang].privacy}>{t.footer.privacy}</Link>
+          <Link href={LEGAL_PATHS[lang].terms}>{t.footer.terms}</Link>
         </nav>
         <a
           className="mf__credit"

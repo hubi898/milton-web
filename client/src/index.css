@@ -2886,14 +2886,15 @@
 
 .legal {
   padding: 140px var(--gutter) 100px;
-  max-width: var(--page);
+  max-width: 720px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .legal h1 {
-  font-size: clamp(32px, 5vw, 48px);
-  margin-bottom: 24px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  margin-bottom: 32px;
 }
 
 .legal p {
@@ -2915,11 +2916,6 @@
   color: var(--ink);
 }
 
-.legal__download {
-  display: inline-block;
-  margin-top: 8px;
-}
-
 .legal a {
   color: var(--blue);
   font-weight: 600;
@@ -2931,8 +2927,7 @@
   border-color: var(--blue);
 }
 
-.legal .label,
-.legal .eyebrow {
+.legal .label {
   margin-bottom: 12px;
 }
 
