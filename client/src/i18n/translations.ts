@@ -113,11 +113,11 @@ const sr = {
         description:
           "Kompletan pregled MS fitinga: nipla, muf, holender, nastavak i ostali elementi za vodovod, grejanje i gas.",
       },
-      "cenovnik-ms-2023": {
+      "cenovnik-ms-2026": {
         title: "MS Fiting Cenovnik",
-        subtitle: "Važeći cenovnik",
+        subtitle: "Važeći cenovnik · 21.09.2026",
         description:
-          "Aktuelni cenovnik mesinganih fitinga. Listajte stranice online ili preuzmite PDF za offline rad.",
+          "Aktuelni cenovnik mesinganih fitinga od 21.09.2026. Listajte stranice online ili preuzmite PDF za offline rad.",
       },
     },
   },
@@ -425,11 +425,11 @@ const hu: Dict = {
         description:
           "Teljes MS fitting áttekintés: toldó, karmantyú, hollandi, közcsavar és további elemek vízhez, fűtéshez és gázhoz.",
       },
-      "cenovnik-ms-2023": {
+      "cenovnik-ms-2026": {
         title: "MS Fiting árlista",
-        subtitle: "Érvényes árlista",
+        subtitle: "Érvényes árlista · 21.09.2026",
         description:
-          "Aktuális sárgaréz fitting árlista. Lapozza online, vagy töltse le a PDF-et offline munkához.",
+          "Aktuális sárgaréz fitting árlista, 21.09.2026. Lapozza online, vagy töltse le a PDF-et offline munkához.",
       },
     },
   },
@@ -735,11 +735,11 @@ const en: Dict = {
         description:
           "Full MS fittings overview: nipples, sockets, unions, extensions and other parts for water, heating and gas.",
       },
-      "cenovnik-ms-2023": {
+      "cenovnik-ms-2026": {
         title: "MS Fiting price list",
-        subtitle: "Current price list",
+        subtitle: "Current price list · 21.09.2026",
         description:
-          "Current brass fittings price list. Browse online or download the PDF for offline use.",
+          "Current brass fittings price list dated 21.09.2026. Browse online or download the PDF for offline use.",
       },
     },
   },
