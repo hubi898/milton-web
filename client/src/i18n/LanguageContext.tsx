@@ -1,10 +1,16 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { langFromLegalPath } from "./legalPaths";
 import { translations, type Lang, type Translation } from "./translations";
 
 const STORAGE_KEY = "milton-lang";
 
 function detectLang(): Lang {
   if (typeof window === "undefined") return "sr";
+  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
+  let path = window.location.pathname.replace(/\/$/, "") || "/";
+  if (base && path.startsWith(base)) path = path.slice(base.length) || "/";
+  const fromPath = langFromLegalPath(path);
+  if (fromPath) return fromPath;
   const stored = window.localStorage.getItem(STORAGE_KEY);
   if (stored === "sr" || stored === "hu" || stored === "en") return stored;
   const nav = (navigator.language || "").toLowerCase();

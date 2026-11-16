@@ -1,6 +1,3 @@
-import { publicUrl } from "@/lib/publicUrl";
-import { useLanguage } from "@/i18n/LanguageContext";
-
 const LEGAL_MAIL = "info@milton.rs";
 
 function LegalText({ text }: { text: string }) {
@@ -27,10 +24,8 @@ export default function LegalDoc({
   title: string;
   sections: { heading: string; body: string }[];
 }) {
-  const { t } = useLanguage();
   return (
     <section className="legal">
-      <p className="eyebrow">{t.legal.eyebrow}</p>
       <h1>{title}</h1>
       {sections.map((section) => (
         <article key={section.heading} className="legal__section">
@@ -38,13 +33,6 @@ export default function LegalDoc({
           <LegalText text={section.body} />
         </article>
       ))}
-      <a
-        className="legal__download"
-        href={publicUrl("/legal/MILTON_Legal_Documents.docx")}
-        download
-      >
-        {t.legal.download}
-      </a>
     </section>
   );
 }

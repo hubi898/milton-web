@@ -2,11 +2,12 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { LANGS } from "@/i18n/translations";
+import { LEGAL_PATHS, legalKind } from "@/i18n/legalPaths";
+import { LANGS, type Lang } from "@/i18n/translations";
 import { publicUrl } from "@/lib/publicUrl";
 
 export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" | "dark" }) {
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { lang, setLang, t } = useLanguage();
@@ -36,6 +37,12 @@ export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" 
   }, [open]);
 
   const contactActive = location === "/kontakt" || location.startsWith("/kontakt");
+
+  const onLang = (id: Lang) => {
+    setLang(id);
+    const kind = legalKind(location);
+    if (kind) setLocation(LEGAL_PATHS[id][kind]);
+  };
 
   return (
     <header className={`mh ${dark ? "mh--dark" : "mh--light"} ${scrolled || open ? "mh--solid" : ""}`}>
@@ -71,7 +78,7 @@ export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" 
                 type="button"
                 className={lang === item.id ? "is-active" : ""}
                 aria-pressed={lang === item.id}
-                onClick={() => setLang(item.id)}
+                onClick={() => onLang(item.id)}
               >
                 {item.label}
               </button>
@@ -100,7 +107,7 @@ export default function SiteHeader({ tone = "auto" }: { tone?: "auto" | "light" 
               type="button"
               className={lang === item.id ? "is-active" : ""}
               aria-pressed={lang === item.id}
-              onClick={() => setLang(item.id)}
+              onClick={() => onLang(item.id)}
             >
               {item.label}
             </button>
