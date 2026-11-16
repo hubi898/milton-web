@@ -39,14 +39,14 @@ export const catalogs: Catalog[] = [
     pagesHint: "PDF",
   },
   {
-    id: "cenovnik-ms-2023",
-    year: "2023",
+    id: "cenovnik-ms-2026",
+    year: "2026",
     category: "cenovnik",
     brand: "MILTON",
-    pdf: "/catalogs/cenovnik-ms-fiting-2023.pdf",
+    pdf: "/catalogs/cenovnik-ms-fiting-2026.pdf",
     coverImage: "/images/product-nipla.jpg",
     accent: "orange",
-    pagesHint: "April 2023",
+    pagesHint: "21.09.2026",
   },
 ];
 

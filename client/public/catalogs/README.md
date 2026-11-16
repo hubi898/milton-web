@@ -1,27 +1,25 @@
 # PDF katalozi — kako dodati novi
 
-Aktuelni Styron katalog: `styron-katalog-2025-26.pdf` (2025/26).
+Aktuelni MS Fiting cenovnik: `cenovnik-ms-fiting-2026.pdf` (21.09.2026).
+Styron proizvodni katalog je eksterni PDF (`https://www.styron.hu/docs/catalogs/catalogue_2025_HU_GB_SK_RO_HR_RU.pdf`).
 
-1. Stavite PDF u `client/public/catalogs/` (npr. `styron-2024.pdf`)
+1. Stavite PDF u `client/public/catalogs/` (npr. `ms-fiting-2027.pdf`)
 2. Otvorite `client/src/data/catalogs.ts`
-3. Ili ažurirajte postojeći unos (`pdf: "/catalogs/styron-2024.pdf"`), ili dodajte novi objekat u niz
+3. Ili ažurirajte postojeći unos (`pdf: "/catalogs/ms-fiting-2027.pdf"`), ili dodajte novi objekat u niz
 
 Primer:
 
 ```ts
 {
-  id: "styron-2024",
-  title: "STYRON 2024",
-  subtitle: "Odvodni sistemi",
-  year: "2024",
-  category: "katalog",
-  brand: "STYRON",
-  description: "Novi katalog.",
-  pdf: "/catalogs/styron-2024.pdf",
-  coverImage: "/images/hero-styron.jpg",
-  accent: "ink",
-  pagesHint: "PDF katalog",
+  id: "cenovnik-ms-2026",
+  year: "2026",
+  category: "cenovnik",
+  brand: "MILTON",
+  pdf: "/catalogs/cenovnik-ms-fiting-2026.pdf",
+  coverImage: "/images/product-nipla.jpg",
+  accent: "orange",
+  pagesHint: "21.09.2026",
 }
 ```
 
-Čitač (`/katalozi/:id`) automatski omogućava listanje, zoom, fullscreen i preuzimanje.
+Naslov i opis idu kroz i18n (`translations.ts`). Čitač (`/katalozi/:id`) automatski omogućava listanje, zoom, fullscreen i preuzimanje.
